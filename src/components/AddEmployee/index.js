@@ -2,7 +2,7 @@
 import React from "react";
 
 //JSX element used for receiving user inputs, triggering handleInputChange & handleFormSubmit functions--properties from parent page components.  "q" is the value entered by user and used for search via API GET request.
-function AddEmployee({ employeeName, address, birthdate, startDate, email, phone, handleInputChange, handleFormSubmit }) {
+function AddEmployee({ firstName, lastName, birthdate, startDate, email, phone, minHours, maxHours, foodCert, handleInputChange, handleFormSubmit }) {
   return (
     <form>
       <div className="form-group">
@@ -11,27 +11,27 @@ function AddEmployee({ employeeName, address, birthdate, startDate, email, phone
         </label>
         <input
           className="form-control"
-          id="Title"
+          id="firstname"
           type="text"
-          value={employeeName}
-          placeholder="employee name"
-          name="employeename"
+          value={firstName}
+          placeholder="first name"
+          name="firstname"
           onChange={handleInputChange}
           required
         />
         <input
           className="form-control"
-          id="Title"
+          id="lastname"
           type="text"
-          value={address}
-          placeholder="address"
-          name="address"
+          value={lastName}
+          placeholder="last name"
+          name="lastname"
           onChange={handleInputChange}
           required
         />
         <input
           className="form-control"
-          id="Title"
+          id="birthdate"
           type="text"
           value={birthdate}
           placeholder="birthdate"
@@ -41,7 +41,7 @@ function AddEmployee({ employeeName, address, birthdate, startDate, email, phone
         />
         <input
           className="form-control"
-          id="Title"
+          id="startdate"
           type="text"
           value={startDate}
           placeholder="start date"
@@ -51,21 +51,51 @@ function AddEmployee({ employeeName, address, birthdate, startDate, email, phone
         />
         <input
           className="form-control"
-          id="Title"
+          id="emailaddress"
           type="text"
           value={email}
-          placeholder="email"
+          placeholder="email address"
           name="email"
           onChange={handleInputChange}
           required
         />
         <input
           className="form-control"
-          id="Title"
+          id="phonenumber"
           type="text"
           value={phone}
-          placeholder="phone"
+          placeholder="phone number"
           name="phone"
+          onChange={handleInputChange}
+          required
+        />
+        <input
+          className="form-control"
+          id="minhours"
+          type="text"
+          value={minHours}
+          placeholder="minimum hours"
+          name="minhrs"
+          onChange={handleInputChange}
+          required
+        />
+        <input
+          className="form-control"
+          id="maxhours"
+          type="text"
+          value={maxHours}
+          placeholder="maximum hours"
+          name="maxhrs"
+          onChange={handleInputChange}
+          required
+        />
+        <input
+          className="form-control"
+          id="foodcertdate"
+          type="text"
+          value={foodCert}
+          placeholder="food certification expiration date"
+          name="foodcertdate"
           onChange={handleInputChange}
           required
         />

@@ -7,12 +7,15 @@ import { Col, Row, Container } from "../components/Grid";
 class Manager extends Component {
     //TODO: set state object for page functions
     state = {
-        employeeName: "",
-        address: "",
+        firstName: "",
+        lastName: "",
         birthdate: "",
         startDate: "",
         email: "",
-        phone: ""
+        phone: "",
+        minHours: "",
+        maxHours: "",
+        foodCert: ""
     };
 
     //Class functions
@@ -35,7 +38,7 @@ class Manager extends Component {
     render() {
         return (
             <Container>
-                    <h1>Manager page</h1>
+            <h1>Manager page</h1>
                 <Row>
                     <AddEmployee />
                 </Row>
