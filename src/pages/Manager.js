@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import AddEmployee from "../components/AddEmployee"
+import AddShift from "../components/AddShift"
 //Import bootstrap elements
 import { Col, Row, Container } from "../components/Grid";
 
@@ -40,7 +41,12 @@ class Manager extends Component {
             <Container>
             <h1>Manager page</h1>
                 <Row>
+                <Col size="md-6">
                     <AddEmployee />
+                </Col>
+                <Col size="md-6">
+                    <AddShift />
+                </Col>
                 </Row>
             </Container>
         )
