@@ -1,6 +1,8 @@
 import React, { Component } from "react";
-import AddEmployee from "../components/AddEmployee"
-import AddShift from "../components/AddShift"
+import AddEmployee from "../components/AddEmployee";
+import AddShift from "../components/AddShift";
+// import ShiftCalendar from "../components/ShiftCalendar";
+
 //Import bootstrap elements
 import { Col, Row, Container } from "../components/Grid";
 
@@ -39,14 +41,17 @@ class Manager extends Component {
     render() {
         return (
             <Container>
-            <h1>Manager page</h1>
+                <h1>Manager page</h1>
                 <Row>
-                <Col size="md-6">
-                    <AddEmployee />
-                </Col>
-                <Col size="md-6">
-                    <AddShift />
-                </Col>
+                    {/* <ShiftCalendar /> */}
+                </Row>
+                <Row>
+                    <Col size="md-6">
+                        <AddEmployee />
+                    </Col>
+                    <Col size="md-6">
+                        <AddShift />
+                    </Col>
                 </Row>
             </Container>
         )
