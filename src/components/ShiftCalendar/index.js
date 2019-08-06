@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 
+//import dateFns npm package
 import dateFns from "date-fns";
+
+//import css
+import "./style.css";
 
 class ShiftCalendar extends Component {
 
@@ -96,7 +100,7 @@ class ShiftCalendar extends Component {
       selectedDate: day
     });
   };
-  
+
 
   nextMonth = () => {
     this.setState({

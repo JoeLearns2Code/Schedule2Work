@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import AddEmployee from "../components/AddEmployee";
 import AddShift from "../components/AddShift";
-// import ShiftCalendar from "../components/ShiftCalendar";
+import ShiftCalendar from "../components/ShiftCalendar";
 
 //Import bootstrap elements
 import { Col, Row, Container } from "../components/Grid";
@@ -43,7 +43,7 @@ class Manager extends Component {
             <Container>
                 <h1>Manager page</h1>
                 <Row>
-                    {/* <ShiftCalendar /> */}
+                    <ShiftCalendar />
                 </Row>
                 <Row>
                     <Col size="md-6">
