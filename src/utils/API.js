@@ -1,22 +1,22 @@
-// import axios from "axios";
+import axios from "axios";
 
-// const API = {
+export default {
 
-//     getAllEmployees: function () {
-//         return axios.get("/getAllEmployees");
-//     },
+    getAllEmployees: function () {
+        return axios.get("/api/employees");
+    },
 
-//     getCurrentUser: function () {
-//         return axios.get("/user");
-//     },
+    getEmployee: function (id) {
+        return axios.get("/api/employees/" + id);
+    },
+    addEmployee: function (data) {
+        return axios.post("/api/employees/", data);
+    },
+    updateEmployee: function (id) {
+        return axios.put("/api/employees" + id);
+    }
+};
 
-//     // errorMessage: function() {
-//     //   return axios.get("/register");
-//     // },
-
-//     getEmployee: function (id) {
-//         return axios.get("/getEmployee/" + id);
-//     },
 
 //     getEmpSchedules: function () {
 //         return axios.get('/getEmpSchedules')

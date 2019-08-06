@@ -1,18 +1,18 @@
 import React from "react";
 
-function SearchBar({ q, handleInputChange, handleFormSubmit }) {
+function SearchBar({ id, handleInputChange, handleFormSubmit }) {
   return (
     <form>
       <div className="form-group">
         <label htmlFor="Query">
-          <strong>Enter Employee Name</strong>
+          <strong>Enter Employee ID</strong>
         </label>
         <input
           className="form-control"
           id="employeesearch"
           type="text"
-          value={q}
-          placeholder="employee name here"
+          value={id}
+          placeholder="employee ID here"
           name="employee query"
           onChange={handleInputChange}
           required

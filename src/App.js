@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import Manager from "./pages/Manager";
 import Profile from "./pages/Profile";
 import NoMatch from "./pages/NoMatch";
+// import Navbar from "./components/Navbar";
 
 
 
@@ -11,7 +12,7 @@ function App() {
   return (
     <Router>
       <div>
-        {/* <Nav /> */}
+        {/* <Navbar /> */}
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/manager" component={Manager} />
