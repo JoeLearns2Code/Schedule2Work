@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import Manager from "./pages/Manager";
 import Profile from "./pages/Profile";
 import NoMatch from "./pages/NoMatch";
+// import Navbar from "./components/Navbar";
 
 
 
