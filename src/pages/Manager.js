@@ -2,9 +2,12 @@ import React, { Component } from "react";
 import AddEmployee from "../components/AddEmployee";
 import AddShift from "../components/AddShift";
 import ShiftCalendar from "../components/ShiftCalendar";
+import Card from "../components/Card";
+import ShiftGeneral from "../components/ShiftGeneral";
 
 //Import bootstrap elements
 import { Col, Row, Container } from "../components/Grid";
+import { List } from "../components/List";
 
 
 class Manager extends Component {
@@ -18,7 +21,9 @@ class Manager extends Component {
         phone: "",
         minHours: "",
         maxHours: "",
-        foodCert: ""
+        foodCert: "",
+
+        shifts: []
     };
 
     //Class functions
@@ -37,6 +42,23 @@ class Manager extends Component {
 
     };
 
+    // //function to get shifts and put them in the shifts state array
+    // getShifts = () => {
+    //     API.getShifts()
+    //         .then(res =>
+    //             this.setState({
+    //                 shifts: res.data
+    //             })
+    //         )
+    //         //If no new books are found based on the query, provide message string
+    //         .catch(() =>
+    //             this.setState({
+    //                 shifts: [],
+    //                 message: "No shifts found!"
+    //             })
+    //         );
+    // };
+
 
     render() {
         return (
@@ -52,6 +74,19 @@ class Manager extends Component {
                     <Col size="md-6">
                         <AddShift />
                     </Col>
+                </Row>
+                <Row>
+                    <Col size="md-12">
+                        <Card title="This Week's Schedule">
+                            {/* Create a ShiftGeneral element for each result returned */}
+                            <List>
+                                <ShiftGeneral />
+                            </List>
+                        </Card>
+                    </Col>
+                </Row>
+                <Row>
+                    Day Detailed Schedule Here
                 </Row>
             </Container>
         )

@@ -34,7 +34,7 @@ class ShiftCalendar extends Component {
       </div>
     );
   };
-  //TODO:
+  //Render day data -- possibly add shift data here
   renderDays() {
     const dateFormat = "dddd";
     const days = [];
