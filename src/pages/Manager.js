@@ -10,19 +10,23 @@ import ShiftDetail from "../components/ShiftDetail";
 import { Col, Row, Container } from "../components/Grid";
 import { List } from "../components/List";
 
+//Import API methods
+import API from "../utils/API";
+
 
 class Manager extends Component {
     //TODO: set state object for page functions
     state = {
         firstName: "",
         lastName: "",
-        birthdate: "",
+        address: "",
         startDate: "",
+        dateofBirth: "",
+        certDate: "",
+        certType: "",
         email: "",
         phone: "",
-        minHours: "",
-        maxHours: "",
-        foodCert: "",
+        password: "",
 
         shifts: []
     };
@@ -32,16 +36,27 @@ class Manager extends Component {
     //handleInputChange method
     handleInputChange = event => {
         const { name, value } = event.target;
+        // console.log("working");
         this.setState({
             [name]: value
         });
+        console.log(value);
     };
 
     //Event function when the submit button is clicked.
-    handleFormSubmit = event => {
+    handleEmployeeSubmit = event => {
         event.preventDefault();
+        console.log("click");
 
     };
+
+    //TODO: Make a POST request to send new employee data to the server
+    handleEmployeeAdd = () => {
+        API.addEmployee({
+            
+        })
+    };
+
 
     // //function to get shifts and put them in the shifts state array
     // getShifts = () => {
@@ -70,10 +85,25 @@ class Manager extends Component {
                 </Row>
                 <Row>
                     <Col size="md-6">
-                        <AddEmployee />
+                        <AddEmployee 
+                        handleInputChange={this.handleInputChange}
+                        handleEmployeeSubmit={this.handleEmployeeSubmit}
+                        firstName={this.state.firstName}
+                        lastName={this.state.lastName}
+                        address={this.state.address}
+                        startDate={this.state.startDate}
+                        dateofBirth={this.state.dateofBirth}
+                        certDate={this.state.certDate}
+                        certType={this.state.certType}
+                        email={this.state.email}
+                        phone={this.state.phone}
+                        password={this.state.password}
+                        />
                     </Col>
                     <Col size="md-6">
-                        <AddShift />
+                        <AddShift 
+                        
+                        />
                     </Col>
                 </Row>
                 <Row>
@@ -92,6 +122,6 @@ class Manager extends Component {
             </Container>
         )
     }
-}
+};
 
 export default Manager;

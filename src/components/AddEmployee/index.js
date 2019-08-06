@@ -1,12 +1,12 @@
 //Import React.js library
 import React from "react";
 
-//JSX element used for receiving user inputs, triggering handleInputChange & handleFormSubmit functions--properties from parent page components.  "q" is the value entered by user and used for search via API GET request.
-function AddEmployee({ firstName, lastName, birthdate, startDate, email, phone, minHours, maxHours, foodCert, handleInputChange, handleFormSubmit }) {
+//Add new employee function
+function AddEmployee({ firstName, lastName, address, startDate, dateofBirth, certDate, certType, email, phone, password, handleInputChange, handleEmployeeSubmit }) {
   return (
     <form>
       <div className="form-group">
-        <label htmlFor="Query">
+        <label htmlFor="New Employee">
           <h3>Enter New Employee Information</h3>
         </label>
         <input
@@ -15,7 +15,7 @@ function AddEmployee({ firstName, lastName, birthdate, startDate, email, phone, 
           type="text"
           value={firstName}
           placeholder="first name"
-          name="firstname"
+          name="firstName"
           onChange={handleInputChange}
           required
         />
@@ -25,17 +25,17 @@ function AddEmployee({ firstName, lastName, birthdate, startDate, email, phone, 
           type="text"
           value={lastName}
           placeholder="last name"
-          name="lastname"
+          name="lastName"
           onChange={handleInputChange}
           required
         />
         <input
           className="form-control"
-          id="birthdate"
+          id="address"
           type="text"
-          value={birthdate}
-          placeholder="birthdate"
-          name="birthdate"
+          value={address}
+          placeholder="address"
+          name="address"
           onChange={handleInputChange}
           required
         />
@@ -45,16 +45,46 @@ function AddEmployee({ firstName, lastName, birthdate, startDate, email, phone, 
           type="text"
           value={startDate}
           placeholder="start date"
-          name="startdate"
+          name="startDate"
           onChange={handleInputChange}
           required
         />
         <input
           className="form-control"
-          id="emailaddress"
+          id="birthdate"
+          type="text"
+          value={dateofBirth}
+          placeholder="date of birth"
+          name="dateofBirth"
+          onChange={handleInputChange}
+          required
+        />
+        <input
+          className="form-control"
+          id="certifydate"
+          type="text"
+          value={certDate}
+          placeholder="certification date"
+          name="certDate"
+          onChange={handleInputChange}
+          required
+        />
+        <input
+          className="form-control"
+          id="certifytype"
+          type="text"
+          value={certType}
+          placeholder="certification type"
+          name="certType"
+          onChange={handleInputChange}
+          required
+        />
+        <input
+          className="form-control"
+          id="email"
           type="text"
           value={email}
-          placeholder="email address"
+          placeholder="email"
           name="email"
           onChange={handleInputChange}
           required
@@ -71,31 +101,11 @@ function AddEmployee({ firstName, lastName, birthdate, startDate, email, phone, 
         />
         <input
           className="form-control"
-          id="minhours"
+          id="password"
           type="text"
-          value={minHours}
-          placeholder="minimum hours"
-          name="minhrs"
-          onChange={handleInputChange}
-          required
-        />
-        <input
-          className="form-control"
-          id="maxhours"
-          type="text"
-          value={maxHours}
-          placeholder="maximum hours"
-          name="maxhrs"
-          onChange={handleInputChange}
-          required
-        />
-        <input
-          className="form-control"
-          id="foodcertdate"
-          type="text"
-          value={foodCert}
-          placeholder="food certification expiration date"
-          name="foodcertdate"
+          value={password}
+          placeholder="enter password"
+          name="password"
           onChange={handleInputChange}
           required
         />
@@ -103,7 +113,7 @@ function AddEmployee({ firstName, lastName, birthdate, startDate, email, phone, 
       
       <div className="pull-right">
         <button
-          onClick={handleFormSubmit}
+          onClick={handleEmployeeSubmit}
           type="submit"
           className="btn btn-lg btn-danger float-right"
         >

@@ -4,7 +4,7 @@ function Card({shiftName, children}) {
     return (
         //TODO: add an onClick function after the class name, inside <>
         <div className="card mt-4">
-            <div clasName="card-header">
+            <div className="card-header">
                 <h3>
                     {shiftName}
                 </h3>
