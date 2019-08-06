@@ -4,6 +4,7 @@ import AddShift from "../components/AddShift";
 import ShiftCalendar from "../components/ShiftCalendar";
 import Card from "../components/Card";
 import ShiftGeneral from "../components/ShiftGeneral";
+import ShiftDetail from "../components/ShiftDetail";
 
 //Import bootstrap elements
 import { Col, Row, Container } from "../components/Grid";
@@ -86,7 +87,7 @@ class Manager extends Component {
                     </Col>
                 </Row>
                 <Row>
-                    Day Detailed Schedule Here
+                    <ShiftDetail />
                 </Row>
             </Container>
         )
