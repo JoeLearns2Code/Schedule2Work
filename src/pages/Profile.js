@@ -13,6 +13,7 @@ class Profile extends Component {
     state = {
         id: "",
         employee: [],
+        message: "",
         
         firstName: "",
         lastName: "",
@@ -37,13 +38,29 @@ class Profile extends Component {
     //Event function when the search button is clicked.
     handleFormSubmit = event => {
         event.preventDefault();
+        this.getEmployee();
+        console.log("click")
 
     };
 
     //Get Employee by ID
     getEmployee = () => {
         API.getEmployee(this.state.id)
-    }
+        .then(res =>
+            this.setState({
+              employee: res.data
+            })
+          )
+          //TODO: If no employee found, provide message state
+          .catch(() =>
+            this.setState({
+              employee: [],
+              message: "No Employee Found"
+            })
+          );
+      };
+      
+    
 
 
     render() {

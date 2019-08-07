@@ -5,6 +5,7 @@ import ShiftCalendar from "../components/ShiftCalendar";
 import Card from "../components/Card";
 import ShiftGeneral from "../components/ShiftGeneral";
 import ShiftDetail from "../components/ShiftDetail";
+import AllEmployees from "../components/AllEmployees";
 
 //Import bootstrap elements
 import { Col, Row, Container } from "../components/Grid";
@@ -15,7 +16,7 @@ import API from "../utils/API";
 
 
 class Manager extends Component {
-    //TODO: set state object for page functions
+    //state object for page functions
     state = {
         firstName: "",
         lastName: "",
@@ -28,6 +29,7 @@ class Manager extends Component {
         phone: "",
         password: "",
 
+        employees: [],
         shifts: []
     };
 
@@ -53,10 +55,32 @@ class Manager extends Component {
     //TODO: Make a POST request to send new employee data to the server
     handleEmployeeAdd = () => {
         API.addEmployee({
-            
+
         })
     };
 
+    //TODO: Determine if we want to GET employees on componentDidMount or by button press
+
+    //Make a GET request to list all employees in the AllEmployees element
+    handleAllEmployees = () => {
+        API.getAllEmployees()
+            .then(res =>
+                this.setState({
+                    employees: res.data
+                })
+            )
+            .catch(() => 
+                this.setState({
+                    employees: [],
+                    message: "No Employees Found"
+                })
+            );
+    };
+
+    //TODO: function to delete employee from database
+    handleEmployeeDelete = id => {
+        API.deleteEmployee(id).then(res => this.getAllEmployees());
+    };
 
     // //function to get shifts and put them in the shifts state array
     // getShifts = () => {
@@ -85,30 +109,30 @@ class Manager extends Component {
                 </Row>
                 <Row>
                     <Col size="md-6">
-                        <AddEmployee 
-                        handleInputChange={this.handleInputChange}
-                        handleEmployeeSubmit={this.handleEmployeeSubmit}
-                        firstName={this.state.firstName}
-                        lastName={this.state.lastName}
-                        address={this.state.address}
-                        startDate={this.state.startDate}
-                        dateofBirth={this.state.dateofBirth}
-                        certDate={this.state.certDate}
-                        certType={this.state.certType}
-                        email={this.state.email}
-                        phone={this.state.phone}
-                        password={this.state.password}
+                        <AddEmployee
+                            handleInputChange={this.handleInputChange}
+                            handleEmployeeSubmit={this.handleEmployeeSubmit}
+                            firstName={this.state.firstName}
+                            lastName={this.state.lastName}
+                            address={this.state.address}
+                            startDate={this.state.startDate}
+                            dateofBirth={this.state.dateofBirth}
+                            certDate={this.state.certDate}
+                            certType={this.state.certType}
+                            email={this.state.email}
+                            phone={this.state.phone}
+                            password={this.state.password}
                         />
                     </Col>
                     <Col size="md-6">
-                        <AddShift 
-                        
+                        <AddShift
+
                         />
                     </Col>
                 </Row>
                 <Row>
                     <Col size="md-12">
-                        <Card title="This Week's Schedule">
+                        <Card title="weeklyschedule">
                             {/* Create a ShiftGeneral element for each result returned */}
                             <List>
                                 <ShiftGeneral />
@@ -118,6 +142,31 @@ class Manager extends Component {
                 </Row>
                 <Row>
                     <ShiftDetail />
+                </Row>
+                <Row>
+                    <Col size="md-12">
+                        <h2>Employee Information:</h2>
+                        <Card title="employeelist">
+                            {/* {this.state.employees.length ? (
+                                <List>
+                                    {this.state.employees.map(data => (
+                                        <AllEmployees 
+                                        key={data.id}
+                                        firstName={data.FirstName}
+                                        Button={() => (
+                                            <button
+                                                onClick={() => this.handleEmployeeDelete(data.id)}
+                                                className="btn btn-danger ml-d"
+                                            >
+                                            Delete
+                                            </button>
+                                        )}
+                                        />
+                                    ))}
+                                </List>
+                            )} */}
+                        </Card>
+                    </Col>
                 </Row>
             </Container>
         )

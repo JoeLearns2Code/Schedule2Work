@@ -13,7 +13,7 @@ function SearchBar({ id, handleInputChange, handleFormSubmit }) {
           type="text"
           value={id}
           placeholder="employee ID here"
-          name="employee query"
+          name="id"
           onChange={handleInputChange}
           required
         />
