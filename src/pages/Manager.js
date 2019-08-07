@@ -5,6 +5,7 @@ import ShiftCalendar from "../components/ShiftCalendar";
 import Card from "../components/Card";
 import ShiftGeneral from "../components/ShiftGeneral";
 import ShiftDetail from "../components/ShiftDetail";
+import AllEmployees from "../components/AllEmployees";
 
 //Import bootstrap elements
 import { Col, Row, Container } from "../components/Grid";
@@ -28,6 +29,7 @@ class Manager extends Component {
         phone: "",
         password: "",
 
+        employees: [],
         shifts: []
     };
 
@@ -108,7 +110,7 @@ class Manager extends Component {
                 </Row>
                 <Row>
                     <Col size="md-12">
-                        <Card title="This Week's Schedule">
+                        <Card title="weeklyschedule">
                             {/* Create a ShiftGeneral element for each result returned */}
                             <List>
                                 <ShiftGeneral />
@@ -118,6 +120,18 @@ class Manager extends Component {
                 </Row>
                 <Row>
                     <ShiftDetail />
+                </Row>
+                <Row>
+                    <Col size="md-12">
+                        <h2>Employee Information:</h2>
+                        <Card title="employeelist">
+                            {/* {this.state.employees.length ? (
+                                <List>
+                                    
+                                </List>
+                            )} */}
+                        </Card>
+                    </Col>
                 </Row>
             </Container>
         )
