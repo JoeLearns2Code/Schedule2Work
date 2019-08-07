@@ -14,6 +14,9 @@ export default {
     },
     updateEmployee: function (id) {
         return axios.put("/api/employees" + id);
+    },
+    deleteEmployee: function(id) {
+        return axios.delete("/api/employees" + id);
     }
 };
 
