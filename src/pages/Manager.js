@@ -15,7 +15,7 @@ import API from "../utils/API";
 
 
 class Manager extends Component {
-    //TODO: set state object for page functions
+    //state object for page functions
     state = {
         firstName: "",
         lastName: "",
