@@ -1,14 +1,26 @@
 import React from "react";
 //Import bootstrap elements
 import { Row, Col } from "../Grid";
+//import css
+import "./style.css";
 
-function ShiftDetail({ startTime, endTime}) {
+function ShiftDetail({ startTime}) {
     return(
         <Row>
-        <Col size="md-6">
+        <Col size="md-12">
         <h3>Shift Details:</h3>
-        <p>Start Time: {startTime}</p>
-        <p>Start Time: {endTime}</p>
+        <table>
+            <tr>
+                <th>Time:</th>
+                <th>Employee:</th>
+                <th>Role:</th>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
         </Col>
         </Row>
     );

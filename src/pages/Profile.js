@@ -33,6 +33,7 @@ class Profile extends Component {
         this.setState({
             [name]: value
         });
+        console.log(value);
     };
 
     //Event function when the search button is clicked.
@@ -40,7 +41,6 @@ class Profile extends Component {
         event.preventDefault();
         this.getEmployee();
         console.log("click")
-
     };
 
     //Get Employee by ID
@@ -58,6 +58,7 @@ class Profile extends Component {
               message: "No Employee Found"
             })
           );
+          console.log("this function was called")
       };
       
     
