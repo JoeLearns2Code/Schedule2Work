@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 // import NavBar from "../../components/Navbar/Navbar";
 import NavBar from '../../components/Navbar/index';
-// import N
-
+// import Jumbotron from " ../../components/Jumbotron/index";
+import "./Home.css";
 class HomePage extends Component {
     render() {
         return (
