@@ -91,22 +91,22 @@ class Manager extends Component {
         API.deleteEmployee(id).then(res => this.getAllEmployees());
     };
 
-    // //function to get shifts and put them in the shifts state array
-    // getShifts = () => {
-    //     API.getShifts()
-    //         .then(res =>
-    //             this.setState({
-    //                 shifts: res.data
-    //             })
-    //         )
-    //         //If no new books are found based on the query, provide message string
-    //         .catch(() =>
-    //             this.setState({
-    //                 shifts: [],
-    //                 message: "No shifts found!"
-    //             })
-    //         );
-    // };
+    //function to get shifts and put them in the shifts state array
+    getShifts = () => {
+        API.getShifts()
+            .then(res =>
+                this.setState({
+                    shifts: res.data
+                })
+            )
+            //If no new books are found based on the query, provide message string
+            .catch(() =>
+                this.setState({
+                    shifts: [],
+                    message: "No shifts found!"
+                })
+            );
+    };
 
 
     render() {

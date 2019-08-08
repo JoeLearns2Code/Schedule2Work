@@ -5,7 +5,7 @@ import { ListItem } from "../List";
 import { Row, Col } from "../Grid";
 
 
-function AllEmployees({ firstName, lastName, address, startDate, dateofBirth, certDate, certType, email, phone}) {
+function AllEmployees({ firstName, lastName, address, startDate, dateofBirth, certDate, certType, email, phone, Button}) {
     return (
         <ListItem>
             <Row className="d-flex flex-row-reverse">
@@ -19,7 +19,7 @@ function AllEmployees({ firstName, lastName, address, startDate, dateofBirth, ce
                     <p><strong>Certifcation Type: </strong>{certType}</p>
                     <p><strong>Email Address: </strong>{email}</p>
                     <p><strong>Phone Number: </strong>{phone}</p>
-                    
+                    <Button />
                 </Col>
             </Row>
         </ListItem>
