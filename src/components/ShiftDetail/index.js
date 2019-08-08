@@ -1,13 +1,15 @@
 import React from "react";
 //Import bootstrap elements
 import { Row, Col } from "../Grid";
+import Card from "../Card";
 //import css
 import "./style.css";
 
 function ShiftDetail({ startTime}) {
     return(
         <Row>
-        <Col size="md-12">
+        <Col size="md-6">
+        <Card>
         <h3>Shift Details:</h3>
         <table>
         <tbody>
@@ -23,6 +25,7 @@ function ShiftDetail({ startTime}) {
             </tr>
         </tbody>
         </table>
+        </Card>
         </Col>
         </Row>
     );

@@ -41,18 +41,6 @@ class Profile extends Component {
         event.preventDefault();
         this.getEmployee()
         console.log("click");
-        //TODO: Find a way to resolve this async issue
-        this.setState({
-            firstName: this.state.employee.FirstName,
-            lastName: this.state.employee.LastName,
-            address: this.state.employee.Address,
-            startDate: this.state.employee.StartDate,
-            dateofBirth: this.state.employee.DOB,
-            certDate: this.state.employee.CertExpDate,
-            certType: this.state.employee.CertType,
-            email: this.state.employee.Email,
-            phone: this.state.employee.Phone
-        })
     };
 
     //Get Employee by ID
@@ -61,8 +49,19 @@ class Profile extends Component {
             .then(res =>
                 this.setState({
                     employee: res.data
-                }),
-                //TODO: Find a way to resolve this async issue
+                }, () =>
+                        this.setState({
+                            firstName: this.state.employee.FirstName,
+                            lastName: this.state.employee.LastName,
+                            address: this.state.employee.Address,
+                            startDate: this.state.employee.StartDate,
+                            dateofBirth: this.state.employee.DOB,
+                            certDate: this.state.employee.CertExpDate,
+                            certType: this.state.employee.CertType,
+                            email: this.state.employee.Email,
+                            phone: this.state.employee.Phone
+                        })
+                )
             )
             //TODO: If no employee found, provide message state
             .catch(() =>
@@ -101,7 +100,7 @@ class Profile extends Component {
                         certDate={this.state.certDate}
                         email={this.state.email}
                         phone={this.state.phone}
-                    />  
+                    />
                 </Row>
             </Container>
 
