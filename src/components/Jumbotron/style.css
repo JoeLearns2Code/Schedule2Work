@@ -1,0 +1,8 @@
+.jumbotron {
+    padding: 200px;
+    height: 100px;
+    background-image: url(/assets/images/wall.png);
+    margin-top: 10px;
+    color: white;
+}
+
