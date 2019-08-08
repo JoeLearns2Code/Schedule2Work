@@ -62,14 +62,15 @@ class Manager extends Component {
     //TODO: Determine if we want to GET employees on componentDidMount or by button press
 
     //Make a GET request to list all employees in the AllEmployees element
-    handleAllEmployees = () => {
+    handleAllEmployees = event => {
+        event.preventDefault();
         API.getAllEmployees()
             .then(res =>
                 this.setState({
                     employees: res.data
                 })
             )
-            .catch(() => 
+            .catch(() =>
                 this.setState({
                     employees: [],
                     message: "No Employees Found"
@@ -146,25 +147,29 @@ class Manager extends Component {
                 <Row>
                     <Col size="md-12">
                         <h2>Employee Information:</h2>
+                        <button onClick={this.handleAllEmployees}
+                            type="submit">Get Employees</button>
                         <Card title="employeelist">
-                            {/* {this.state.employees.length ? (
+                            {this.state.employees.length ? (
                                 <List>
                                     {this.state.employees.map(data => (
-                                        <AllEmployees 
-                                        key={data.id}
-                                        firstName={data.FirstName}
-                                        Button={() => (
-                                            <button
-                                                onClick={() => this.handleEmployeeDelete(data.id)}
-                                                className="btn btn-danger ml-d"
-                                            >
-                                            Delete
-                                            </button>
-                                        )}
+                                        <AllEmployees
+                                            key={data.id}
+                                            firstName={data.FirstName}
+                                            Button={() => (
+                                                <button
+                                                    onClick={() => this.handleEmployeeDelete(data.id)}
+                                                    className="btn btn-danger ml-d"
+                                                >
+                                                    Delete
+                                                </button>
+                                            )}
                                         />
                                     ))}
                                 </List>
-                            )} */}
+                            ) : (
+                                    <h2 className="text-center">{this.state.message}</h2>
+                                )}
                         </Card>
                     </Col>
                 </Row>

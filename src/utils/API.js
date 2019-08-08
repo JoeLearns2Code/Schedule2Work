@@ -5,7 +5,7 @@ const BASEURL = "https://limitless-bayou-55894.herokuapp.com";
 export default {
 
     getAllEmployees: function () {
-        return axios.get("/api/employees");
+        return axios.get(BASEURL + "/api/employees");
     },
 
     getEmployee: function (id) {

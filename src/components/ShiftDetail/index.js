@@ -10,6 +10,7 @@ function ShiftDetail({ startTime}) {
         <Col size="md-12">
         <h3>Shift Details:</h3>
         <table>
+        <tbody>
             <tr>
                 <th>Time:</th>
                 <th>Employee:</th>
@@ -20,6 +21,7 @@ function ShiftDetail({ startTime}) {
                 <td></td>
                 <td></td>
             </tr>
+        </tbody>
         </table>
         </Col>
         </Row>
