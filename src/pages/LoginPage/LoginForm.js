@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Card, Form, FormGroup, FormControl, Button } from 'react-bootstrap';
 
 
+
 const divStyle = {
     display: 'flex',
     alignItems: 'center',
@@ -42,8 +43,7 @@ class LoginForm extends Component {
                         </FormGroup>
                         <FormGroup style={buttonStyle} controlId="formSubmit">
                             <Button type="submit" onClick={this.handleFormSubmit}>
-                                Login
-              </Button>
+                                Login</Button>
                         </FormGroup>
                     </Form>
                 </Card>

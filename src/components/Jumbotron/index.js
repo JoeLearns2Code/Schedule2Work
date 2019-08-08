@@ -1,19 +1,18 @@
-// import React from "react";
+import React from "react";
+import { MDBJumbotron, MDBContainer } from "mdbreact";
+import "./style.css";
 
-// function Jumbotron({ children }) {
-//     return (
-//     <div
-//         style={{
-//         height: 300,
-//         clear: "both",
-//         paddingTop: 120,
-//         textAlign: "center"
-//     }}
-//         className="jumbotron"
-//     >
-//         {children}
-//     </div>
-//     );
-// }
+const Jumbotron = () => {
+return (
+    <MDBJumbotron fluid>
+    <MDBContainer>
+            <h2 className="display-4">Scheduling App for all Devices.</h2>
+        <p className="lead">
+        Start Scheduling .
+        </p>
+        </MDBContainer>
+    </MDBJumbotron>
+    );
+};
 
-// export default Jumbotron;
+export default Jumbotron;
