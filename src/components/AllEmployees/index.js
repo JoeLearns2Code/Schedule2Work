@@ -10,14 +10,15 @@ function AllEmployees({ firstName, lastName, address, startDate, dateofBirth, ce
         <ListItem>
             <Row className="d-flex flex-row-reverse">
                 <Col size="md-6">
-                    <h5>Employee Name: {firstName} {lastName}</h5>
-                    <p>Address: {address}</p>
-                    <p>Date of Hire: {startDate}</p>
-                    <p>Date of Birth: {dateofBirth}</p>
-                    <p>Date of Certification: {certDate}</p>
-                    <p>Certifcation Type: {certType}</p>
-                    <p>Email Address: {email}</p>
-                    <p>Phone Number: {phone}</p>
+                    <h4>Employee Name: {firstName} {lastName}</h4>
+                    <br/>
+                    <p><strong>Address: </strong>{address}</p>
+                    <p><strong>Date of Hire: </strong>{startDate}</p>
+                    <p><strong>Date of Birth: </strong>{dateofBirth}</p>
+                    <p><strong>Date of Certification: </strong>{certDate}</p>
+                    <p><strong>Certifcation Type: </strong>{certType}</p>
+                    <p><strong>Email Address: </strong>{email}</p>
+                    <p><strong>Phone Number: </strong>{phone}</p>
                     
                 </Col>
             </Row>

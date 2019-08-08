@@ -78,6 +78,14 @@ class Manager extends Component {
             );
     };
 
+    //Clear employee list from state array
+    handleClearEmployees = event => {
+        event.preventDefault();
+        this.setState({
+            employees: []
+        })
+    };
+
     //TODO: function to delete employee from database
     handleEmployeeDelete = id => {
         API.deleteEmployee(id).then(res => this.getAllEmployees());
@@ -148,7 +156,8 @@ class Manager extends Component {
                     <Col size="md-12">
                         <h2>Employee Information:</h2>
                         <button onClick={this.handleAllEmployees}
-                            type="submit">Get Employees</button>
+                            type="submit">Get Employees</button><button onClick={this.handleClearEmployees}
+                            type="submit">Clear Employees</button>
                         <Card title="employeelist">
                             {this.state.employees.length ? (
                                 <List>
