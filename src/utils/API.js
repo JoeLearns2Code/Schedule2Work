@@ -4,6 +4,7 @@ const BASEURL = "https://limitless-bayou-55894.herokuapp.com";
 
 export default {
 
+    //Employee
     getAllEmployees: function () {
         return axios.get(BASEURL + "/api/employees");
     },
@@ -19,7 +20,12 @@ export default {
     },
     deleteEmployee: function(id) {
         return axios.delete("/api/employee" + id);
-    }
+    },
+
+    //Shift
+    getShifts: function () {
+        return axios.get(BASEURL + "/api/employees");
+    },
 };
 
 

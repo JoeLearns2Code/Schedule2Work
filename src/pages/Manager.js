@@ -59,7 +59,7 @@ class Manager extends Component {
         })
     };
 
-    //TODO: Determine if we want to GET employees on componentDidMount or by button press
+    
 
     //Make a GET request to list all employees in the AllEmployees element
     handleAllEmployees = event => {
@@ -91,6 +91,12 @@ class Manager extends Component {
         API.deleteEmployee(id).then(res => this.getAllEmployees());
     };
 
+
+    //Load shifts
+    componentDidMount() {
+        this.getShifts();
+      }
+
     //function to get shifts and put them in the shifts state array
     getShifts = () => {
         API.getShifts()
@@ -107,6 +113,8 @@ class Manager extends Component {
                 })
             );
     };
+
+    
 
 
     render() {
@@ -143,9 +151,19 @@ class Manager extends Component {
                     <Col size="md-12">
                         <Card title="weeklyschedule">
                             {/* Create a ShiftGeneral element for each result returned */}
-                            <List>
-                                <ShiftGeneral />
-                            </List>
+                            {this.state.shifts.length ? (
+                                <List>
+                                    {this.state.shifts.map(data => (
+                                        <ShiftGeneral
+                                            key={data.id}
+                                            firstName={data.FirstName}
+
+                                        />
+                                    ))}
+                                </List>
+                            ) : (
+                                    <h2 className="text-center">{this.state.message}</h2>
+                                )}
                         </Card>
                     </Col>
                 </Row>

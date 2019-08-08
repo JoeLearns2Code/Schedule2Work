@@ -11,4 +11,12 @@ export const List = ({ children }) => (
 
 export function ListItem({ children }) {
   return <li className="list-group-item">{children}</li>;
-}
+};
+
+//TODO: Research FlatList and determine if we can populate List Items into it
+export const FlatList = ({ children }) => (
+  <FlatList
+
+  >{children}
+    </FlatList>
+);
