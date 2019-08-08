@@ -1,23 +1,31 @@
 import axios from "axios";
 
+const BASEURL = "https://limitless-bayou-55894.herokuapp.com";
+
 export default {
 
+    //Employee
     getAllEmployees: function () {
-        return axios.get("/api/employees");
+        return axios.get(BASEURL + "/api/employees");
     },
 
     getEmployee: function (id) {
-        return axios.get("/api/employees/" + id);
+        return axios.get(BASEURL + "/api/employee/" + id);
     },
     addEmployee: function (data) {
-        return axios.post("/api/employees/", data);
+        return axios.post("/api/employee/", data);
     },
     updateEmployee: function (id) {
-        return axios.put("/api/employees" + id);
+        return axios.put("/api/employee" + id);
     },
     deleteEmployee: function(id) {
-        return axios.delete("/api/employees" + id);
-    }
+        return axios.delete("/api/employee" + id);
+    },
+
+    //Shift
+    getShifts: function () {
+        return axios.get(BASEURL + "/api/employees");
+    },
 };
 
 
