@@ -99,7 +99,7 @@ class Manager extends Component {
                     shifts: res.data
                 })
             )
-            //If no new books are found based on the query, provide message string
+            //If no new shifts are found based on the query, provide message string
             .catch(() =>
                 this.setState({
                     shifts: [],
