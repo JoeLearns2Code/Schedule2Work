@@ -156,6 +156,14 @@ class Manager extends Component {
                                         <AllEmployees
                                             key={data.id}
                                             firstName={data.FirstName}
+                                            lastName={data.LastName}
+                                            address={data.Address}
+                                            dateofBirth={data.DOB}
+                                            startDate={data.StartDate}
+                                            email={data.Email}
+                                            phone={data.Phone}
+                                            certType={data.CertType}
+                                            certDate={data.CertExpDate}
                                             Button={() => (
                                                 <button
                                                     onClick={() => this.handleEmployeeDelete(data.id)}

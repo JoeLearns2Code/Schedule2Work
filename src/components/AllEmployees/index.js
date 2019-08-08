@@ -9,7 +9,7 @@ function AllEmployees({ firstName, lastName, address, startDate, dateofBirth, ce
     return (
         <ListItem>
             <Row className="d-flex flex-row-reverse">
-                <Col size="md-2">
+                <Col size="md-6">
                     <h5>Employee Name: {firstName} {lastName}</h5>
                     <p>Address: {address}</p>
                     <p>Date of Hire: {startDate}</p>
