@@ -1,4 +1,6 @@
 import React from "react";
+//import css
+import "./style.css";
 
 function SearchBar({ id, handleInputChange, handleFormSubmit }) {
   return (
