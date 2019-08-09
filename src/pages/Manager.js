@@ -126,9 +126,9 @@ class Manager extends Component {
 
 
     //Load shifts
-    componentDidMount() {
-        this.handleGetShifts();
-    }
+    // componentDidMount() {
+    //     this.handleGetShifts();
+    // }
 
     //function to get shifts and put them in the shifts state array
     handleGetShifts = () => {
