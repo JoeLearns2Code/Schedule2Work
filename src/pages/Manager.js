@@ -29,6 +29,7 @@ class Manager extends Component {
         phone: "",
         password: "",
 
+        shiftDate: "",
         startTime: "",
         endTime: "",
         roleName: "",
@@ -126,17 +127,17 @@ class Manager extends Component {
 
 
     //Load shifts
-    // componentDidMount() {
-    //     this.handleGetShifts();
-    // }
+    componentDidMount() {
+        this.handleGetShifts();
+    }
 
     //function to get shifts and put them in the shifts state array
     handleGetShifts = () => {
         API.getShifts()
             .then(res =>
                 this.setState({
-                    shifts: res.data[0].shifts,
-                    workdays: res.data[0]
+                    shifts: res.data[0].Shifts,
+                    workdays: res.data
                 })
             )
             //If no new shifts are found based on the query, provide message string
@@ -152,21 +153,21 @@ class Manager extends Component {
     handleShiftDetails = event => {
         event.preventDefault();
         console.log("click");
-        this.filterShift("Josue");
+        this.filterShift(9);
 
     }
     
     //Filter shift to view details by id
     filterShift(filterItem) {
-        this.setState({ filteredShift: this.state.shifts.filter(shifts => shifts.FirstName = filterItem) },
+        this.setState({ filteredShift: this.state.shifts.filter(shifts => shifts.ShiftID === filterItem) },
             () => this.setState({
-                startTimeD: this.state.filteredShift.StartTime,
-                endTimeD: this.state.filteredShift.EndTime,
-                roleNameD: this.state.filteredShift.RoleName,
-                proficiencyLevelD: this.state.filteredShift.ProficiencyLevel,
-                firstNameShiftD: this.state.filteredShift.FirstName,
-                lastNameShiftD: this.state.filteredShift.LastName,
-                phoneShiftD: this.state.filteredShift.Phone
+                startTimeD: this.state.filteredShift[0].StartTime,
+                endTimeD: this.state.filteredShift[0].EndTime,
+                roleNameD: this.state.filteredShift[0].RoleName,
+                proficiencyLevelD: this.state.filteredShift[0].ProficiencyLevel,
+                firstNameShiftD: this.state.filteredShift[0].FirstName,
+                lastNameShiftD: this.state.filteredShift[0].LastName,
+                phoneShiftD: this.state.filteredShift[0].Phone
             }));
         //after state is set, run get shifts again to re-populate
         this.handleGetShifts();
@@ -215,12 +216,12 @@ class Manager extends Component {
                     <Col size="md-6">
                         <Card title="weeklyschedule">
                             {/* Create a ShiftGeneral element for each result returned */}
-                            {this.state.shifts.length ? (
+                            {this.state.workdays.length ? (
                                 <List>
-                                    {this.state.shifts.map(data => (
+                                    {this.state.workdays.map(data => (
                                         <ShiftGeneral
-                                            key={data.id}
-                                            firstNameShift={data.FirstName}
+                                            key={data}
+                                            shiftDate={data.Date}
                                             handleShiftDetails={this.handleShiftDetails}
                                         />
                                     ))}
