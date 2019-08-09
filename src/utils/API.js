@@ -26,6 +26,10 @@ export default {
     getShifts: function () {
         return axios.get(BASEURL + "/api/schedule");
     },
+
+    addShift: function (data) {
+        return axios.post("/api/schedule", data);
+    }
 };
 
 
