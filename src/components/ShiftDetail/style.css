@@ -2,5 +2,21 @@ th {
 
     padding-right: 3em;
     color: orange;
-
+    background: rgba(255,255,255,.3);
 }
+
+
+/* body{
+    background-color:powerblue;
+}  */
+
+/* .container {
+        flex: 1;
+        flex-Direction: column;
+        justify-Content: space-between;
+        width: 50;
+        height: 50; 
+        background-Color: powderblue;
+        color: white !important;
+
+} */
