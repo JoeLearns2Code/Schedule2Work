@@ -95,7 +95,7 @@ class Manager extends Component {
     //Load shifts
     componentDidMount() {
         this.getShifts();
-      }
+    }
 
     //function to get shifts and put them in the shifts state array
     getShifts = () => {
