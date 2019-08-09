@@ -9,7 +9,12 @@
     color: #fff; 
     z-index: 99;
     white-space: nowrap;
+    opacity: 1.2;
 
+}
+
+.nowrap {
+    white-space: nowrap;
 }
 
 .navbar div {
