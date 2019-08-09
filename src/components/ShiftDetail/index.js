@@ -1,32 +1,30 @@
-import React, { Component } from "react";
+import React from "react";
 //Import bootstrap elements
 import { Row, Col } from "../Grid";
 import Card from "../Card";
 //import css
 import "./style.css";
 
-class ShiftDetail extends Component {
+function ShiftDetail({ firstNameShift, lastNameShift, startTime, endTime, roleName, proficiencyLevel }) {
 
-    //TODO: Create a method to render data in the table columns
-
-
-    render() {
         return (
             <Row>
-                <Col size="md-6">
+                <Col size="md-12">
                     <Card>
                         <h3>Shift Details:</h3>
                         <table>
                             <tbody>
                                 <tr>
-                                    <th>Time:</th>
                                     <th>Employee:</th>
+                                    <th>Shift: </th>
                                     <th>Role:</th>
+                                    <th>Proficiency: </th>
                                 </tr>
                                 <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
+                                    <td>{firstNameShift} {lastNameShift}</td>
+                                    <td>{startTime} - {endTime}</td>
+                                    <td>{roleName}</td>
+                                    <td>{proficiencyLevel}</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -34,7 +32,7 @@ class ShiftDetail extends Component {
                 </Col>
             </Row>
         );
-    }
-}
+    
+};
 
 export default ShiftDetail;

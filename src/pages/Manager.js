@@ -138,7 +138,12 @@ class Manager extends Component {
             );
     };
 
-    
+    //Event function for bringing up Shift Details
+    handleShiftDetails = event => {
+        event.preventDefault();
+        console.log("click");
+
+    }
 
 
     render() {
@@ -180,7 +185,7 @@ class Manager extends Component {
                     </Col>
                 </Row>
                 <Row>
-                    <Col size="md-12">
+                    <Col size="md-6">
                         <Card title="weeklyschedule">
                             {/* Create a ShiftGeneral element for each result returned */}
                             {this.state.shifts.length ? (
@@ -189,7 +194,7 @@ class Manager extends Component {
                                         <ShiftGeneral
                                             key={data.id}
                                             firstNameShift={data.FirstName}
-
+                                            handleShiftDetails={this.handleShiftDetails}
                                         />
                                     ))}
                                 </List>
@@ -198,9 +203,17 @@ class Manager extends Component {
                                 )}
                         </Card>
                     </Col>
-                </Row>
-                <Row>
-                    <ShiftDetail />
+                    <Col size="md-6">
+                    <ShiftDetail 
+                        startTime={this.state.startTime}
+                        endTime={this.state.endTime}
+                        roleName={this.state.roleName}
+                        proficiencyLevel={this.state.proficiencyLevel}
+                        firstNameShift={this.state.firstNameShift}
+                        lastNameShift={this.state.lastNameShift}
+                        
+                    />
+                    </Col>
                 </Row>
                 <Row>
                     <Col size="md-12">

@@ -5,13 +5,13 @@ import { ListItem } from "../List";
 import { Row, Col } from "../Grid";
 
 
-function ShiftGeneral({ firstNameShift }) {
+function ShiftGeneral({ firstNameShift, handleShiftDetails }) {
     return (
         <ListItem>
             {/* TODO: add onClick=  function to get shift details */}
-            <div className="card">
+            <div className="card" onClick={handleShiftDetails}>
             <Row className="d-flex flex-row-reverse">
-                <Col size="md-2">
+                <Col size="md-4">
                     <h5>Employee Name: {firstNameShift}</h5>
                 
                 </Col>
