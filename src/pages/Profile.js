@@ -88,22 +88,22 @@ class Profile extends Component {
                             id={this.state.id}
                         />
                     </Col>
-                </Row>
-                <Row>
-                    <Employee
-                        firstName={this.state.firstName}
-                        lastName={this.state.lastName}
-                        address={this.state.address}
-                        startDate={this.state.startDate}
-                        dateofBirth={this.state.dateofBirth}
-                        certType={this.state.certType}
-                        certDate={this.state.certDate}
-                        email={this.state.email}
-                        phone={this.state.phone}
-                    />
+                    <Col size="md-6">
+                        <Employee
+                            firstName={this.state.firstName}
+                            lastName={this.state.lastName}
+                            address={this.state.address}
+                            startDate={this.state.startDate}
+                            dateofBirth={this.state.dateofBirth}
+                            certType={this.state.certType}
+                            certDate={this.state.certDate}
+                            email={this.state.email}
+                            phone={this.state.phone}
+                        />
+                    </Col>
                 </Row>
             </Container>
-            
+
 
         )
     }

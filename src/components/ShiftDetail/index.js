@@ -5,7 +5,7 @@ import Card from "../Card";
 //import css
 import "./style.css";
 
-function ShiftDetail({ firstNameShift, lastNameShift, startTime, endTime, roleName, proficiencyLevel }) {
+function ShiftDetail({ firstNameShiftD, lastNameShiftD, startTimeD, endTimeD, roleNameD, proficiencyLevelD }) {
 
         return (
             <Container>
@@ -22,10 +22,10 @@ function ShiftDetail({ firstNameShift, lastNameShift, startTime, endTime, roleNa
                                     <th>Proficiency: </th>
                                 </tr>
                                 <tr>
-                                    <td>{firstNameShift} {lastNameShift}</td>
-                                    <td>{startTime} - {endTime}</td>
-                                    <td>{roleName}</td>
-                                    <td>{proficiencyLevel}</td>
+                                    <td>{firstNameShiftD} {lastNameShiftD}</td>
+                                    <td>{startTimeD} - {endTimeD}</td>
+                                    <td>{roleNameD}</td>
+                                    <td>{proficiencyLevelD}</td>
                                 </tr>
                             </tbody>
                         </table>
