@@ -1,5 +1,6 @@
 import React from "react";
-
+// //import css
+// import "./style.css";
 //import bootstrap elements
 import { ListItem } from "../List";
 import { Row, Col } from "../Grid";

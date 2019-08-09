@@ -1,17 +1,22 @@
 .navbar {
-    background: rgb(125, 213, 204);
+    background:#2196F3;
     min-height: 20px;
     font-size: 18px;
     padding: 5px 0;
     width: 100%;
     -webkit-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-    color: #fff; 
+    color:white; 
     z-index: 99;
     white-space: nowrap;
     opacity: 1.2;
 
 }
+
+a{
+color: white;
+}
+
 
 .nowrap {
     white-space: nowrap;
