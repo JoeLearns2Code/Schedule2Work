@@ -29,6 +29,14 @@ class Manager extends Component {
         phone: "",
         password: "",
 
+        startTime: "", 
+        endTime: "", 
+        roleName: "", 
+        proficiencyLevel: "", 
+        firstNameShift: "", 
+        lastNameShift: "", 
+        phoneShift: "",
+
         employees: [],
         shifts: []
     };
@@ -54,6 +62,20 @@ class Manager extends Component {
 
     //TODO: Make a POST request to send new employee data to the server
     handleEmployeeAdd = () => {
+        API.addEmployee({
+
+        })
+    };
+
+    //Event function when the submit button is clicked.
+    handleShiftSubmit = event => {
+        event.preventDefault();
+        console.log("click");
+
+    };
+
+    //TODO: Make a POST request to send new employee data to the server
+    handleShiftAdd = () => {
         API.addEmployee({
 
         })
@@ -143,7 +165,15 @@ class Manager extends Component {
                     </Col>
                     <Col size="md-6">
                         <AddShift
-
+                            handleInputChange={this.handleInputChange}
+                            handleShiftSubmit={this.handleShiftSubmit}
+                            startTime={this.state.startTime}
+                            endTime={this.state.endTime}
+                            roleName={this.state.roleName}
+                            proficiencyLevel={this.state.proficiencyLevel}
+                            firstNameShift={this.state.firstNameShift}
+                            lastNameShift={this.state.lastNameShift}
+                            phoneShift={this.state.phoneShift}
                         />
                     </Col>
                 </Row>
@@ -156,7 +186,7 @@ class Manager extends Component {
                                     {this.state.shifts.map(data => (
                                         <ShiftGeneral
                                             key={data.id}
-                                            firstName={data.FirstName}
+                                            firstNameShift={data.FirstName}
 
                                         />
                                     ))}

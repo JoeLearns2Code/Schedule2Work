@@ -24,7 +24,7 @@ export default {
 
     //Shift
     getShifts: function () {
-        return axios.get(BASEURL + "/api/employees");
+        return axios.get(BASEURL + "/api/schedule");
     },
 };
 
