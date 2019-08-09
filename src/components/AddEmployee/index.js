@@ -1,5 +1,6 @@
 //Import React.js library
 import React from "react";
+import { UncontrolledCollapse, Button } from 'reactstrap';
 
 //Add new employee function
 function AddEmployee({ firstName, lastName, address, startDate, dateofBirth, certDate, certType, email, phone, password, handleInputChange, handleEmployeeSubmit }) {
@@ -7,8 +8,11 @@ function AddEmployee({ firstName, lastName, address, startDate, dateofBirth, cer
     <form>
       <div className="form-group">
         <label htmlFor="New Employee">
+          <Button color="primary" id="toggler" style={{ marginBottom: '1rem' }}>
           <h3>Enter New Employee Information</h3>
+    </Button>
         </label>
+        <UncontrolledCollapse toggler="#toggler">
         <input
           className="form-control"
           id="firstname"
@@ -108,10 +112,9 @@ function AddEmployee({ firstName, lastName, address, startDate, dateofBirth, cer
           name="password"
           onChange={handleInputChange}
           required
+          
         />
-      </div>
-      
-      <div className="pull-right">
+        <div className="pull-right">
         <button
           onClick={handleEmployeeSubmit}
           type="submit"
@@ -120,6 +123,10 @@ function AddEmployee({ firstName, lastName, address, startDate, dateofBirth, cer
           Submit
         </button>
       </div>
+        </UncontrolledCollapse>
+      </div>
+      
+      
     </form>
   );
 }
