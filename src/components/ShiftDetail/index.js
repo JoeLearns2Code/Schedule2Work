@@ -1,6 +1,6 @@
 import React from "react";
 //Import bootstrap elements
-import { Row, Col } from "../Grid";
+import { Row, Col, Container } from "../Grid";
 import Card from "../Card";
 //import css
 import "./style.css";
@@ -8,8 +8,9 @@ import "./style.css";
 function ShiftDetail({ firstNameShift, lastNameShift, startTime, endTime, roleName, proficiencyLevel }) {
 
         return (
+            <Container>
             <Row>
-                <Col size="md-12">
+                <Col size="md-12-sm-4">
                     <Card>
                         <h3>Shift Details:</h3>
                         <table>
@@ -31,6 +32,7 @@ function ShiftDetail({ firstNameShift, lastNameShift, startTime, endTime, roleNa
                     </Card>
                 </Col>
             </Row>
+            </Container>
         );
     
 };

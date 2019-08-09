@@ -29,16 +29,17 @@ class Manager extends Component {
         phone: "",
         password: "",
 
-        startTime: "", 
-        endTime: "", 
-        roleName: "", 
-        proficiencyLevel: "", 
-        firstNameShift: "", 
-        lastNameShift: "", 
-        phoneShift: "",
+        startTime: "test",
+        endTime: "test",
+        roleName: "test",
+        proficiencyLevel: "test",
+        firstNameShift: "test",
+        lastNameShift: "test",
+        phoneShift: "test",
 
         employees: [],
         shifts: [],
+        filteredShift: ["test"],
         workdays: []
     };
 
@@ -82,7 +83,7 @@ class Manager extends Component {
         })
     };
 
-    
+
 
     //Make a GET request to list all employees in the AllEmployees element
     handleAllEmployees = event => {
@@ -109,7 +110,7 @@ class Manager extends Component {
         })
     };
 
-    //TODO: function to delete employee from database
+    //Function to delete employee from database
     handleEmployeeDelete = id => {
         API.deleteEmployee(id).then(res => this.getAllEmployees());
     };
@@ -118,7 +119,7 @@ class Manager extends Component {
     //Load shifts
     componentDidMount() {
         this.handleGetShifts();
-      }
+    }
 
     //function to get shifts and put them in the shifts state array
     handleGetShifts = () => {
@@ -142,7 +143,23 @@ class Manager extends Component {
     handleShiftDetails = event => {
         event.preventDefault();
         console.log("click");
+        this.filterShift(this.state.shifts.FirstName);
 
+    }
+    
+    filterShift(filterItem) {
+        this.setState({ filteredShift: this.state.shifts.filter(shifts => shifts.FirstName = filterItem) },
+            () => this.setState({
+                startTime: this.state.filteredShift.StartTime,
+                endTime: this.state.filteredShift.EndTime,
+                roleName: this.state.filteredShift.RoleName,
+                proficiencyLevel: this.state.filteredShift.ProficiencyLevel,
+                firstNameShift: this.state.filteredShift.FirstName,
+                lastNameShift: this.state.filteredShift.LastName,
+                phoneShift: this.state.filteredShift.Phone
+            }));
+        //after state is set, run get shifts again to re-populate
+        this.handleGetShifts();
     }
 
 
@@ -204,15 +221,15 @@ class Manager extends Component {
                         </Card>
                     </Col>
                     <Col size="md-6">
-                    <ShiftDetail 
-                        startTime={this.state.startTime}
-                        endTime={this.state.endTime}
-                        roleName={this.state.roleName}
-                        proficiencyLevel={this.state.proficiencyLevel}
-                        firstNameShift={this.state.firstNameShift}
-                        lastNameShift={this.state.lastNameShift}
-                        
-                    />
+                        <ShiftDetail
+                            startTime={this.state.startTime}
+                            endTime={this.state.endTime}
+                            roleName={this.state.roleName}
+                            proficiencyLevel={this.state.proficiencyLevel}
+                            firstNameShift={this.state.shifts.FirstName}
+                            lastNameShift={this.state.lastNameShift}
+
+                        />
                     </Col>
                 </Row>
                 <Row>
@@ -220,7 +237,7 @@ class Manager extends Component {
                         <h2>Employee Information:</h2>
                         <button onClick={this.handleAllEmployees}
                             type="submit">Get Employees</button><button onClick={this.handleClearEmployees}
-                            type="submit">Clear Employees</button>
+                                type="submit">Clear Employees</button>
                         <Card title="employeelist">
                             {this.state.employees.length ? (
                                 <List>

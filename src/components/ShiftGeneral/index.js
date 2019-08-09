@@ -11,7 +11,7 @@ function ShiftGeneral({ firstNameShift, handleShiftDetails }) {
             {/* TODO: add onClick=  function to get shift details */}
             <div className="card" onClick={handleShiftDetails}>
             <Row className="d-flex flex-row-reverse">
-                <Col size="md-4">
+                <Col size="md-6-sm-4">
                     <h5>Employee Name: {firstNameShift}</h5>
                 
                 </Col>
