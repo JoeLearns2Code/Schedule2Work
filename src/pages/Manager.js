@@ -143,7 +143,7 @@ class Manager extends Component {
     handleShiftDetails = event => {
         event.preventDefault();
         console.log("click");
-        this.filterShift(this.state.shifts.FirstName);
+        this.filterShift("Josue");
 
     }
     
