@@ -38,7 +38,8 @@ class Manager extends Component {
         phoneShift: "",
 
         employees: [],
-        shifts: []
+        shifts: [],
+        workdays: []
     };
 
     //Class functions
@@ -116,15 +117,16 @@ class Manager extends Component {
 
     //Load shifts
     componentDidMount() {
-        this.getShifts();
+        this.handleGetShifts();
       }
 
     //function to get shifts and put them in the shifts state array
-    getShifts = () => {
+    handleGetShifts = () => {
         API.getShifts()
             .then(res =>
                 this.setState({
-                    shifts: res.data
+                    shifts: res.data[0].shifts,
+                    workdays: res.data[0]
                 })
             )
             //If no new shifts are found based on the query, provide message string
