@@ -9,9 +9,9 @@ import API from "../../utils/API"
 class LoginPage extends Component {
 
     state = {
-       
-     email: "",
-     password: ""
+    
+    email: "",
+    password: ""
 
     }
 

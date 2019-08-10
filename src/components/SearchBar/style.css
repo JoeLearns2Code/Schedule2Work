@@ -1,8 +1,28 @@
-/* .container{
-    background-color:#eeeeee;
-} */
+div.row{
+    background-color:salmon;
+    color:black;
+}
+
+
 
 .h1,h1{
     margin-top: 40px;
     padding: 20px;
+    background-color:salmon;
 };
+
+.h3,h3{
+    margin-left: 51px;
+    margin-top: 68px;
+}
+
+div.col-md-6{
+    margin-left: 51px;
+    margin-top: -33px;
+    
+
+}
+
+/* .container{
+    border: solid;
+} */
