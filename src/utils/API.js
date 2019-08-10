@@ -29,6 +29,12 @@ export default {
 
     addShift: function (data) {
         return axios.post("/api/schedule", data);
+    },
+
+    //Login
+
+    login: function () {
+        return axios.post("/api/employees");
     }
 };
 
