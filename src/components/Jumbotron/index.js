@@ -11,7 +11,8 @@ return (
     <MDBContainer>
             <h2 className="display-4">Scheduling App for all Devices.</h2>
             <p className="lead">
-                <Button color="primary">Start Scheduling</Button>
+                <Button href="manager">Start Scheduling</Button>
+                {/* <Button color="primary">Start Scheduling</Button> */}
             </p>
         </MDBContainer>
     </MDBJumbotron>
