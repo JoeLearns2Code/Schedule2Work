@@ -80,6 +80,7 @@ class Profile extends Component {
         return (
             <Container>
                 <h1>Profile page</h1>
+                <div class="componentwindow">
                 <Row>
                     <Col size="md-4">
                         <SearchBar
@@ -102,11 +103,14 @@ class Profile extends Component {
                         />
                     </Col>
                 </Row>
+                </div>
             </Container>
 
 
         )
     }
 }
+
+
 
 export default Profile;

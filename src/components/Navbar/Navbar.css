@@ -1,16 +1,30 @@
 .navbar {
-    background: rgb(125, 213, 204);
+    background:#2196F3;
     min-height: 20px;
-    font-size: 18px;
+    font-size: 1px;
     padding: 5px 0;
     width: 100%;
     -webkit-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-    color: #fff; 
-    z-index: 99;
-    white-space: nowrap;
+    color:white; 
+    z-index: 0;
     opacity: 1.2;
 
+}
+
+a{
+color: white;
+    z-index: 0;
+    cursor: pointer;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-brand>img {
+    padding: 7px 14px;
 }
 
 .nowrap {
@@ -74,7 +88,7 @@
     display: flex;
     /* position: fixed; */
     justify-content: space-around;
-    font-size: calc(10px + 14 * (100vw - 320px) / 800);
+    font-size: calc(10px + 10 * (100vw - 320px) / 800);
     }
 
     .navbar div {
@@ -84,3 +98,6 @@
     
     }
 }
+
+
+@import 'https://fonts.googleapis.com/css?family=Raleway';

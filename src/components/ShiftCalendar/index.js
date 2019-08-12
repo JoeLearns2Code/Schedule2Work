@@ -7,12 +7,16 @@ import dateFns from "date-fns";
 import "./style.css";
 
 class ShiftCalendar extends Component {
-
+  
   state = {
     currentMonth: new Date(),
-    selectedDate: new Date()
+    selectedDate: new Date(),
+    startTime: "",
+    firstNameShift: "",
+    roleName: ""
   };
 
+  //Function to render the header section
   renderHeader() {
     const dateFormat = "MMMM YYYY";
 
@@ -51,6 +55,7 @@ class ShiftCalendar extends Component {
     return <div className="days row">{days}</div>;
   }
 
+  //Render date.Fns time data as variables to display in renderHeader, renderDays
   renderCells() {
     const { currentMonth, selectedDate } = this.state;
     const monthStart = dateFns.startOfMonth(currentMonth);
@@ -81,6 +86,9 @@ class ShiftCalendar extends Component {
             >
               <span className="number">{formattedDate}</span>
               <span className="bg">{formattedDate}</span>
+              <span className="firstName">{this.state.firstNameShift}</span>
+              <span className="firstName">{this.state.startTime}</span>
+              <span className="firstName">{this.state.roleName}</span>
             </div>
         );
         day = dateFns.addDays(day, 1);
@@ -95,6 +103,7 @@ class ShiftCalendar extends Component {
     return <div className="body">{rows}</div>;
   }
 
+  //methods
   onDateClick = day => {
     this.setState({
       selectedDate: day
@@ -114,7 +123,7 @@ class ShiftCalendar extends Component {
     });
   };
 
-
+  //Render the 3 render methods onto calendar
   render() {
     return (
       <div className="calendar">
