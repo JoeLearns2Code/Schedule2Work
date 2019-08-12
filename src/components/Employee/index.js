@@ -1,4 +1,5 @@
 import React from "react";
+import "./style.css";
 //Import bootstrap elements
 import { Row, Col } from "../Grid";
 

@@ -4,7 +4,7 @@ import "./style.css";
 
 function SearchBar({ id, handleInputChange, handleFormSubmit }) {
   return (
-    <form>
+    <form id="searchform">
       <div className="form-group">
         <label htmlFor="Query">
           <strong>Enter Employee ID</strong>

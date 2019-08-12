@@ -4,7 +4,6 @@ import './Login.css';
 
 //Import API methods
 import API from "../../utils/API"
-import { thisExpression } from '@babel/types';
 
 
 class LoginPage extends Component {
@@ -47,7 +46,7 @@ class LoginPage extends Component {
             console.log(error)
         })
     };
-    
+
 
     render() {
         return (
