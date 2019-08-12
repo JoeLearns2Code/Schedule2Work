@@ -11,7 +11,8 @@ class LoginPage extends Component {
     state = {
     
     email: "",
-    password: ""
+    password: "",
+    message: ""
 
     }
 
@@ -29,11 +30,30 @@ class LoginPage extends Component {
         event.preventDefault();
         console.log("FORM SUBMIT!");
         API.login({
-            
+            email: this.state.email,
+            password: this.state.password
+        }).then(response => {
+            console.log(response)
+            if (response.status === 200) {
+                console.log("Successfully logged in")
+                this.setState({
+                    message: "Logged in Successfully!",
+                    redirectTo: "/manager"
+                })
+            } else {
+                console.log("Failed to log in")
+                
+            }
 
-        }) 
-        
-    }
+        }).catch(error => {
+            console.log("Login error")
+            console.log(error)
+            this.setState({
+                message: "Login failed."
+            })
+        })
+    };
+
 
     render() {
         return (
@@ -43,6 +63,7 @@ class LoginPage extends Component {
             handleFormSubmit={this.handleFormSubmit}
             email={this.state.email}
             password={this.state.password}
+            message={this.state.message}
             
             />
             
