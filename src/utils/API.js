@@ -19,7 +19,7 @@ export default {
         return axios.put("/api/employee" + id);
     },
     deleteEmployee: function(id) {
-        return axios.delete("/api/employee" + id);
+        return axios.delete(BASEURL + "/api/employee" + id);
     },
 
     //Shift

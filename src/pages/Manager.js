@@ -27,6 +27,7 @@ class Manager extends Component {
         certType: "",
         email: "",
         phone: "",
+        roles: "",
         password: "",
 
         shiftDate: "",
@@ -69,11 +70,12 @@ class Manager extends Component {
     //Event function when the submit button is clicked.
     handleEmployeeSubmit = event => {
         event.preventDefault();
+        this.handleAllEmployees();
         console.log("click");
 
     };
 
-    //TODO: Make a POST request to send new employee data to the server
+    //TODO: Make a POST request to send new employee data to the server  -- add roles field
     handleEmployeeAdd = () => {
         API.addEmployee({
 
@@ -98,7 +100,6 @@ class Manager extends Component {
 
     //Make a GET request to list all employees in the AllEmployees element
     handleAllEmployees = event => {
-        event.preventDefault();
         API.getAllEmployees()
             .then(res =>
                 this.setState({
@@ -123,7 +124,9 @@ class Manager extends Component {
 
     //Function to delete employee from database
     handleEmployeeDelete = id => {
-        API.deleteEmployee(id).then(res => this.getAllEmployees());
+        API.deleteEmployee(id).then(event => 
+           
+            this.handleAllEmployees())
     };
 
 
@@ -201,6 +204,7 @@ class Manager extends Component {
                             certType={this.state.certType}
                             email={this.state.email}
                             phone={this.state.phone}
+                            roles={this.state.roles}
                             password={this.state.password}
                         />
                     </Col>
@@ -253,7 +257,7 @@ class Manager extends Component {
                 <Row>
                     <Col size="md-12">
                         <h2>Employee Information:</h2>
-                        <button onClick={this.handleAllEmployees}
+                        <button onClick={this.handleEmployeeSubmit}
                             type="submit">Get Employees</button><button onClick={this.handleClearEmployees}
                                 type="submit">Clear Employees</button>
                         <Card title="employeelist">
@@ -271,6 +275,7 @@ class Manager extends Component {
                                             phone={data.Phone}
                                             certType={data.CertType}
                                             certDate={data.CertExpDate}
+                                            roles={data.Roles}
                                             Button={() => (
                                                 <button
                                                     onClick={() => this.handleEmployeeDelete(data.id)}
