@@ -1,0 +1,39 @@
+.MDBFooter {
+    border: white;
+}
+
+.mdb-color {
+    color: black;
+}
+
+.font-weight-bold {
+    color: rgb(73, 148, 233);
+    text-shadow:  2px 2px 4px rgba( 0, 0, 0, .7);
+    
+}
+
+i, .repo {
+    color: black;
+    /* text-shadow:  2px 2px teal; */
+}
+.mx-auto {
+    color: white;
+}
+
+.grey-text {
+    color: white;
+}
+
+.title {
+    color: black;
+    text-shadow:  2px 2px 4px rgba( 0, 172, 173, .7);
+}
+
+
+footer.page-footer.mdb-color{
+    background-color: gray;
+}
+
+h6,h6{
+    
+}

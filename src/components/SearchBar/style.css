@@ -1,4 +1,4 @@
-div.row{
+/* div.row{
     background-color:salmon;
     color:black;
 }
@@ -25,4 +25,14 @@ div.col-md-6{
 
 /* .container{
     border: solid;
-} */
+} */ 
+
+
+
+/* div.col-md-6{
+    margin-left: 51;    
+    margin-top: 45px;
+    padding-left: 10px;
+    padding-right: 10px;
+    display: block;
+}  */
