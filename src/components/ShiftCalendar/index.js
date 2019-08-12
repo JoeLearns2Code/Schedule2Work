@@ -11,9 +11,9 @@ class ShiftCalendar extends Component {
   state = {
     currentMonth: new Date(),
     selectedDate: new Date(),
-    startTime: "test",
-    firstNameShift: "test",
-    roleName: "test"
+    startTime: "",
+    firstNameShift: "",
+    roleName: ""
   };
 
   //Function to render the header section
@@ -49,7 +49,6 @@ class ShiftCalendar extends Component {
       days.push(
         <div className="col col-center" key={i}>
           {dateFns.format(dateFns.addDays(startDate, i), dateFormat)}
-          {this.state.startTime}
         </div>
       );
     };
@@ -87,6 +86,9 @@ class ShiftCalendar extends Component {
             >
               <span className="number">{formattedDate}</span>
               <span className="bg">{formattedDate}</span>
+              <span className="firstName">{this.state.firstNameShift}</span>
+              <span className="firstName">{this.state.startTime}</span>
+              <span className="firstName">{this.state.roleName}</span>
             </div>
         );
         day = dateFns.addDays(day, 1);

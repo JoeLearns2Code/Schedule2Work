@@ -4,6 +4,7 @@ import './Login.css';
 
 //Import API methods
 import API from "../../utils/API"
+import { thisExpression } from '@babel/types';
 
 
 class LoginPage extends Component {
@@ -29,11 +30,24 @@ class LoginPage extends Component {
         event.preventDefault();
         console.log("FORM SUBMIT!");
         API.login({
-            
+            email: this.state.email,
+            password: this.state.password
+        }).then(response => {
+            if (response.data) {
+                console.log("Successfully logged in")
+                this.setState({
+                    redirectTo: "/"
+                })
+            } else {
+                console.log("Failed to log in")
+            }
 
-        }) 
-        
-    }
+        }).catch(error => {
+            console.log("Login error")
+            console.log(error)
+        })
+    };
+    
 
     render() {
         return (
