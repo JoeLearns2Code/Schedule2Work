@@ -13,7 +13,7 @@ export default {
         return axios.get(BASEURL + "/api/employee/" + id);
     },
     addEmployee: function (data) {
-        return axios.post("/api/employee/", data);
+        return axios.post("/api/newEmployee/", data);
     },
     updateEmployee: function (id) {
         return axios.put("/api/employee" + id);
@@ -28,14 +28,14 @@ export default {
     },
 
     addShift: function (data) {
-        return axios.post("/api/schedule", data);
+        return axios.post(BASEURL + "/api/addShift", data);
     },
 
     //Login
 
-    login: function () {
-        return axios.post("/api/employees");
-    }
+    login: function (data) {
+        return axios.post(BASEURL + "/api/login", data);
+    },
 };
 
 

@@ -11,7 +11,8 @@ class LoginPage extends Component {
     state = {
     
     email: "",
-    password: ""
+    password: "",
+    message: ""
 
     }
 
@@ -32,18 +33,24 @@ class LoginPage extends Component {
             email: this.state.email,
             password: this.state.password
         }).then(response => {
-            if (response.data) {
+            console.log(response)
+            if (response.status === 200) {
                 console.log("Successfully logged in")
                 this.setState({
-                    redirectTo: "/"
+                    message: "Logged in Successfully!",
+                    redirectTo: "/manager"
                 })
             } else {
                 console.log("Failed to log in")
+                
             }
 
         }).catch(error => {
             console.log("Login error")
             console.log(error)
+            this.setState({
+                message: "Login failed."
+            })
         })
     };
 
@@ -56,6 +63,7 @@ class LoginPage extends Component {
             handleFormSubmit={this.handleFormSubmit}
             email={this.state.email}
             password={this.state.password}
+            message={this.state.message}
             
             />
             

@@ -21,37 +21,38 @@ const buttonStyle = {
     marginBottom: 0
 };
 
-function LoginForm({ handleFormSubmit, handleInputChange, email, password }) {
+function LoginForm({ handleFormSubmit, handleInputChange, email, password, message }) {
 
 
-    
-        return (
-            <div style={divStyle}>
-                <Card style={panelStyle}>
-                    <Form horizontal="true" className="LoginForm" id="loginForm">
-                        <FormGroup controlId="formEmail">
-                            <FormControl type="email" placeholder="Email Address" 
+
+    return (
+        <div style={divStyle}>
+            <h2>{message}</h2>
+            <Card style={panelStyle}>
+                <Form horizontal="true" className="LoginForm" id="loginForm">
+                    <FormGroup controlId="formEmail">
+                        <FormControl type="email" placeholder="Email Address"
                             value={email}
                             onChange={handleInputChange}
                             name="email"
-                            />
-                        </FormGroup>
-                        <FormGroup controlId="formPassword">
-                            <FormControl type="password" placeholder="Password" 
+                        />
+                    </FormGroup>
+                    <FormGroup controlId="formPassword">
+                        <FormControl type="password" placeholder="Password"
                             value={password}
                             onChange={handleInputChange}
                             name="password"
-                            />
-                        </FormGroup>
-                        <FormGroup style={buttonStyle} controlId="formSubmit">
-                            <Button type="submit" onClick={handleFormSubmit}>
-                                Login</Button>
-                        </FormGroup>
-                    </Form>
-                </Card>
-            </div>
-        )
-    }
+                        />
+                    </FormGroup>
+                    <FormGroup style={buttonStyle} controlId="formSubmit">
+                        <Button type="submit" onClick={handleFormSubmit}>
+                            Login</Button>
+                    </FormGroup>
+                </Form>
+            </Card>
+        </div>
+    )
+}
 
 
 export default LoginForm;
