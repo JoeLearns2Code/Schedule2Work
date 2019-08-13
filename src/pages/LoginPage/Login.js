@@ -37,7 +37,7 @@ class LoginPage extends Component {
             if (response.status === 200) {
                 console.log("Successfully logged in")
                 this.setState({
-                    message: "Logged in Successfully!",
+                    message: "logged in Successfully!",
                     redirectTo: "/manager"
                 })
             } else {
@@ -49,7 +49,7 @@ class LoginPage extends Component {
             console.log("Login error")
             console.log(error)
             this.setState({
-                message: "Login failed."
+                message: "login failed!"
             })
         })
     };
