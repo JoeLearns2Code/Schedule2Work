@@ -65,7 +65,7 @@ class Profile extends Component {
                         })
                 )
             )
-            //TODO: If no employee found, provide message state
+            //If no employee found, provide message state
             .catch(() =>
                 this.setState({
                     employee: [],

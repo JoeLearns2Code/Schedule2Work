@@ -13,8 +13,9 @@ export default {
         return axios.get(BASEURL + "/api/employee/" + id);
     },
     addEmployee: function (data) {
-        return axios.post("/api/newEmployee/", data);
+        return axios.post(BASEURL + "/api/newEmployee/", data);
     },
+    //TODO:
     updateEmployee: function (id) {
         return axios.put("/api/employee" + id);
     },

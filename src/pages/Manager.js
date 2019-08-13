@@ -16,8 +16,8 @@ import API from "../utils/API";
 
 
 class Manager extends Component {
+    
     //state object for page functions
-
     state = {
         //States for Employee table
         firstName: "",
@@ -75,36 +75,94 @@ class Manager extends Component {
         console.log(value);
     };
 
-    //Event function when the submit button is clicked.
+    //Event function when add employees button is clicked.
     handleEmployeeSubmit = event => {
         event.preventDefault();
-        this.handleAllEmployees();
         console.log("click");
+        this.handleEmployeeAdd();
 
-    };
+    };    
 
     //TODO: Make a POST request to send new employee data to the server  -- add roles field
     handleEmployeeAdd = () => {
         API.addEmployee({
+            firstName: this.state.firstName,
+            lastName: this.state.lastName,
+            address: this.state.address,
+            startDate: this.state.startDate,
+            dateofBirth: this.state.dateofBirth,
+            certDate: this.state.certDate,
+            certType: this.state.certType,
+            email: this.state.email,
+            phone: this.state.phone,
+            roles: this.state.roles,
+            password: this.state.password
+        }).then(()=> {
+            this.setState({
+                firstName: "",
+                lastName: "",
+                address: "",
+                startDate: "",
+                dateofBirth: "",
+                certDate: "",
+                certType: "",
+                email: "",
+                phone: "",
+                roles: "",
+                password: ""
 
+            })
+        })
+        .catch(() => {
+            console.log("Add employees failed")
         })
     };
 
-    //Event function when the submit button is clicked.
+    //Event function when the add shift button is clicked.
     handleShiftSubmit = event => {
         event.preventDefault();
         console.log("click");
+        this.handleShiftAdd();
 
     };
 
     //TODO: Make a POST request to send new employee data to the server
     handleShiftAdd = () => {
         API.addShift({
+            shiftDate: this.state.shiftDate,
+            startTime: this.state.startTime,
+            endTime: this.state.endTime,
+            roleName: this.state.roleName,
+            proficiencyLevel: this.state.proficiencyLevel,
+            firstNameShift: this.state.firstNameShift,
+            lastNameShift: this.state.lastNameShift,
+            phoneShift: this.state.phoneShift
+        }).then(()=> {
+            this.setState({
+                shiftDate: "",
+            startTime: "",
+            endTime: "",
+            roleName: "",
+            proficiencyLevel: "",
+            firstNameShift: "",
+            lastNameShift: "",
+            phoneShift: ""
 
+            })
+        })
+        .catch(() => {
+            console.log("Add shifts failed")
         })
     };
 
 
+    //Event function when the Get Employees button is clicked.
+    handleEmployeeGet = event => {
+        event.preventDefault();
+        this.handleAllEmployees();
+        // console.log("click");
+
+    };
 
     //Make a GET request to list all employees in the AllEmployees element
     handleAllEmployees = event => {
@@ -164,7 +222,7 @@ class Manager extends Component {
     //Event function for bringing up Shift Details
     handleShiftDetails = event => {
         event.preventDefault();
-        console.log("click");
+        // console.log("click");
         let selectedShift = this.state.shifts[0].ShiftID
         this.filterShift(selectedShift);
 
@@ -265,7 +323,7 @@ class Manager extends Component {
                 <Row>
                     <Col size="md-12">
                         <h2>Employee Information:</h2>
-                        <button onClick={this.handleEmployeeSubmit}
+                        <button onClick={this.handleEmployeeGet}
                             type="submit">Get Employees</button><button onClick={this.handleClearEmployees}
                                 type="submit">Clear Employees</button>
                         <Card title="employeelist">
