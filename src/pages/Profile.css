@@ -8,6 +8,7 @@
     background-size: cover;
     align-items: center;
     justify-content: center;
+    
 
 }
 
@@ -17,6 +18,9 @@
     margin-top: -18em;
     padding-top: 1em;
     background-color: white;
+    border-style: solid;
+    border-width: 4px;
+    border-color:#2196F3;
 
 
 
@@ -24,4 +28,5 @@
 
 .profileheadline {
     padding-left: .4em;
+    color: #2196F3;
 }

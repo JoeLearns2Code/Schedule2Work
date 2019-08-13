@@ -80,7 +80,7 @@ class Profile extends Component {
 
     render() {
         return (
-            <div class="Profile">
+            <div className="Profile">
             <Container>
                 <div className="componentwindow">
                 <h1 className="profileheadline">Profile page</h1>
