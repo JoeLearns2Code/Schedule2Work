@@ -96,7 +96,7 @@ Future development is needed to get the primary features of the Manager page ful
 
 ## Authors
 
-* **Maryanne Heinbaugh** - Project Manager, JavaScript(server-side), Testing  
+* **Maryanne Heinbaugh** - Project Manager, JavaScript(server-side), Testing(API, Database Tables, Seeding)  
 * **Cullen Aoki** - JavaScript(server-side), API(server-side), GitMaster(server-side)  
 * **Iman Gure** - React.js, CSS  
 * **Joe Hutchinson** - React.js, API(client-side), GitMaster(client-side)  
