@@ -301,9 +301,8 @@ class Manager extends Component {
                                 <List>
                                     {this.state.workdays.map(data => (
                                         <ShiftGeneral
-                                            key={data}
+                                            key={data.ShiftId}
                                             shiftDate={data.Date}
-                                            shiftID={data.Shifts.ShiftId}
                                             handleShiftDetails={this.handleShiftDetails}
                                         />
                                     ))}
