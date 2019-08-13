@@ -6,7 +6,7 @@ import { ListItem } from "../List";
 import { Row, Col } from "../Grid";
 
 
-function ShiftGeneral({ shiftDate, handleShiftDetails }) {
+function ShiftGeneral({ shiftDate, handleShiftDetails, key }) {
     return (
         <ListItem>
             {/* TODO: add onClick=  function to get shift details */}

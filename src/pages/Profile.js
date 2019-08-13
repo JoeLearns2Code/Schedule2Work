@@ -8,6 +8,8 @@ import { Col, Row, Container } from "../components/Grid";
 //Import API methods
 import API from "../utils/API";
 
+import "./Profile.css"
+
 class Profile extends Component {
 
     state = {
@@ -63,7 +65,7 @@ class Profile extends Component {
                         })
                 )
             )
-            //TODO: If no employee found, provide message state
+            //If no employee found, provide message state
             .catch(() =>
                 this.setState({
                     employee: [],
@@ -78,9 +80,10 @@ class Profile extends Component {
 
     render() {
         return (
+            <div className="Profile">
             <Container>
-                <h1>Profile page</h1>
-                <div class="componentwindow">
+                <div className="componentwindow">
+                <h1 className="profileheadline">Profile page</h1>
                 <Row>
                     <Col size="md-4">
                         <SearchBar
@@ -105,7 +108,7 @@ class Profile extends Component {
                 </Row>
                 </div>
             </Container>
-
+            </div>
 
         )
     }

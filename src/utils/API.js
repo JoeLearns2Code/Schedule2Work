@@ -13,13 +13,14 @@ export default {
         return axios.get(BASEURL + "/api/employee/" + id);
     },
     addEmployee: function (data) {
-        return axios.post("/api/newEmployee/", data);
+        return axios.post(BASEURL + "/api/newEmployee/", data);
     },
+    //TODO:
     updateEmployee: function (id) {
         return axios.put("/api/employee" + id);
     },
     deleteEmployee: function(id) {
-        return axios.delete("/api/employee" + id);
+        return axios.delete(BASEURL + "/api/deleteemployee" + id);
     },
 
     //Shift

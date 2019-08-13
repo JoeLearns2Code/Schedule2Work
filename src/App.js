@@ -4,7 +4,7 @@ import Home from "./pages/Home";
 import Manager from "./pages/Manager";
 import Profile from "./pages/Profile";
 import NoMatch from "./pages/NoMatch";
-
+// import logo from "./img/logo.png";
 import Login from "./pages/LoginPage/Login";
 import './App.css';
 import Navbar from "./components/Navbar";
@@ -22,6 +22,8 @@ function App() {
           <Route exact path="/profile" component={Profile} />
           <Route exact path="/login" component={Login} />
           <Route component={NoMatch} />
+          {/* <Route component={logo} /> */}
+          {/* <logo/> */}
         </Switch>
       </div>
     </Router>
