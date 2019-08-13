@@ -16,7 +16,7 @@ import API from "../utils/API";
 
 
 class Manager extends Component {
-    
+
     //state object for page functions
     state = {
         //States for Employee table
@@ -81,7 +81,7 @@ class Manager extends Component {
         console.log("click");
         this.handleEmployeeAdd();
 
-    };    
+    };
 
     //TODO: Make a POST request to send new employee data to the server  -- add roles field
     handleEmployeeAdd = () => {
@@ -97,7 +97,7 @@ class Manager extends Component {
             phone: this.state.phone,
             roles: this.state.roles,
             password: this.state.password
-        }).then(()=> {
+        }).then(() => {
             this.setState({
                 firstName: "",
                 lastName: "",
@@ -113,9 +113,9 @@ class Manager extends Component {
 
             })
         })
-        .catch(() => {
-            console.log("Add employees failed")
-        })
+            .catch(() => {
+                console.log("Add employees failed")
+            })
     };
 
     //Event function when the add shift button is clicked.
@@ -137,22 +137,22 @@ class Manager extends Component {
             firstNameShift: this.state.firstNameShift,
             lastNameShift: this.state.lastNameShift,
             phoneShift: this.state.phoneShift
-        }).then(()=> {
+        }).then(() => {
             this.setState({
                 shiftDate: "",
-            startTime: "",
-            endTime: "",
-            roleName: "",
-            proficiencyLevel: "",
-            firstNameShift: "",
-            lastNameShift: "",
-            phoneShift: ""
+                startTime: "",
+                endTime: "",
+                roleName: "",
+                proficiencyLevel: "",
+                firstNameShift: "",
+                lastNameShift: "",
+                phoneShift: ""
 
             })
         })
-        .catch(() => {
-            console.log("Add shifts failed")
-        })
+            .catch(() => {
+                console.log("Add shifts failed")
+            })
     };
 
 
@@ -190,9 +190,14 @@ class Manager extends Component {
 
     //Function to delete employee from database
     handleEmployeeDelete = id => {
-        API.deleteEmployee(id).then(event => 
-           
-            this.handleAllEmployees())
+        API.deleteEmployee(id)
+            .then(() =>
+                console.log("employee deleted"),
+                this.handleAllEmployees()
+            )
+            .catch(() => {
+                console.log("Delete employee failed")
+            })
     };
 
 
@@ -227,7 +232,7 @@ class Manager extends Component {
         this.filterShift(selectedShift);
 
     }
-    
+
     //Filter shift to view details by id
     filterShift(filterItem) {
         this.setState({ filteredShift: this.state.shifts.filter(shifts => shifts.ShiftID === filterItem) },
@@ -251,9 +256,9 @@ class Manager extends Component {
                 <h1>Manager page</h1>
                 <Row>
                     <ShiftCalendar
-                    startTime={this.state.startTime}
-                    firstNameShift={this.state.firstNameShiftD}
-                    roleName={this.state.roleName}
+                        startTime={this.state.startTime}
+                        firstNameShift={this.state.firstNameShiftD}
+                        roleName={this.state.roleName}
                     />
                 </Row>
                 <Row>
