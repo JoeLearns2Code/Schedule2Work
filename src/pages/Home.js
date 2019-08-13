@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Jumbotron from "../components/Jumbotron/index";
 import Footer from '../components/Footer';
 
-
 class Home extends Component {
     render() {
         return (
@@ -15,6 +14,7 @@ class Home extends Component {
                         
                         {this.props.children}
                     </div>
+                    
                 </Jumbotron>
                 <Footer />
             </div>
