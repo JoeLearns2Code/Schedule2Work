@@ -89,16 +89,17 @@ class Manager extends Component {
         API.addEmployee({
             firstname: this.state.firstName,
             lastname: this.state.lastName,
-            address: this.state.address,
             startdate: this.state.startDate,
             birthdate: this.state.dateofBirth,
-            certifydate: this.state.certDate,
             certifytype: this.state.certType,
+            certifydate: this.state.certDate,
             email: this.state.email,
             phone: this.state.phone,
-            roles: this.state.roles,
-            password: this.state.password
+            password: this.state.password,
+            address: this.state.address,
+            roles: this.state.roles
         }).then(() => {
+            console.log("employee successfully added");
             this.setState({
                 firstName: "",
                 lastName: "",
@@ -127,7 +128,7 @@ class Manager extends Component {
 
     };
 
-    //TODO: Make a POST request to send new employee data to the server
+    //Make a POST request to send new employee data to the server
     handleShiftAdd = () => {
         API.addShift({
             date: this.state.shiftDate,
@@ -136,6 +137,7 @@ class Manager extends Component {
             id: this.state.empID,
             
         }).then(() => {
+            console.log("Shift successfully added.")
             this.setState({
                 shiftDate: "",
                 startTime: "",
