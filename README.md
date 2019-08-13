@@ -2,7 +2,7 @@
 
 Schedule2Work (ver.1.0.0) is an app designed to assist small businesses with storing employee information & scheduling shifts, with an emphasis on features desirable for local fast-food restaurants with part-time employees.  The client-facing website was created with React.js, and relies on data stored on a separate server created with Node.js.   
 
-![Schedule2Work main image](public/assets/images/frontpage.png)
+![Schedule2Work main image](public/assets/images/frontpage_jpeg.jpg)
 
 ## Getting Started
 
