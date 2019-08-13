@@ -36,6 +36,7 @@ class Manager extends Component {
         shiftDate: "",
         startTime: "",
         endTime: "",
+        empID: "",
         roleName: "",
         proficiencyLevel: "",
         firstNameShift: "",
@@ -83,16 +84,16 @@ class Manager extends Component {
 
     };
 
-    //TODO: Make a POST request to send new employee data to the server  -- add roles field
+    //TODO: Make a POST request to send new employee data to the server
     handleEmployeeAdd = () => {
         API.addEmployee({
-            firstName: this.state.firstName,
-            lastName: this.state.lastName,
+            firstname: this.state.firstName,
+            lastname: this.state.lastName,
             address: this.state.address,
-            startDate: this.state.startDate,
-            dateofBirth: this.state.dateofBirth,
-            certDate: this.state.certDate,
-            certType: this.state.certType,
+            startdate: this.state.startDate,
+            birthdate: this.state.dateofBirth,
+            certifydate: this.state.certDate,
+            certifytype: this.state.certType,
             email: this.state.email,
             phone: this.state.phone,
             roles: this.state.roles,
@@ -129,24 +130,17 @@ class Manager extends Component {
     //TODO: Make a POST request to send new employee data to the server
     handleShiftAdd = () => {
         API.addShift({
-            shiftDate: this.state.shiftDate,
-            startTime: this.state.startTime,
-            endTime: this.state.endTime,
-            roleName: this.state.roleName,
-            proficiencyLevel: this.state.proficiencyLevel,
-            firstNameShift: this.state.firstNameShift,
-            lastNameShift: this.state.lastNameShift,
-            phoneShift: this.state.phoneShift
+            date: this.state.shiftDate,
+            starttime: this.state.startTime,
+            endtime: this.state.endTime,
+            id: this.state.empID,
+            
         }).then(() => {
             this.setState({
                 shiftDate: "",
                 startTime: "",
                 endTime: "",
-                roleName: "",
-                proficiencyLevel: "",
-                firstNameShift: "",
-                lastNameShift: "",
-                phoneShift: ""
+                empID: ""
 
             })
         })
@@ -283,13 +277,10 @@ class Manager extends Component {
                         <AddShift
                             handleInputChange={this.handleInputChange}
                             handleShiftSubmit={this.handleShiftSubmit}
+                            shiftDate={this.state.shiftDate}
                             startTime={this.state.startTime}
                             endTime={this.state.endTime}
-                            roleName={this.state.roleName}
-                            proficiencyLevel={this.state.proficiencyLevel}
-                            firstNameShift={this.state.firstNameShift}
-                            lastNameShift={this.state.lastNameShift}
-                            phoneShift={this.state.phoneShift}
+                            empID={this.state.empID}
                         />
                     </Col>
                 </Row>
