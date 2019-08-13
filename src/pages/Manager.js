@@ -17,7 +17,9 @@ import API from "../utils/API";
 
 class Manager extends Component {
     //state object for page functions
+
     state = {
+        //States for Employee table
         firstName: "",
         lastName: "",
         address: "",
@@ -30,6 +32,7 @@ class Manager extends Component {
         roles: "",
         password: "",
 
+        //States for Shift table
         shiftDate: "",
         startTime: "",
         endTime: "",
@@ -52,7 +55,12 @@ class Manager extends Component {
         employees: [],
         shifts: [],
         filteredShift: ["test"],
-        workdays: []
+        workdays: [],
+
+        //Message states
+
+        message: "",
+        empMessage: ""
     };
 
     //Class functions
@@ -109,7 +117,7 @@ class Manager extends Component {
             .catch(() =>
                 this.setState({
                     employees: [],
-                    message: "No Employees Found"
+                    messageEmp: "No Employees Found"
                 })
             );
     };
@@ -288,7 +296,7 @@ class Manager extends Component {
                                     ))}
                                 </List>
                             ) : (
-                                    <h2 className="text-center">{this.state.message}</h2>
+                                    <h2 className="text-center">{this.state.messageEmp}</h2>
                                 )}
                         </Card>
                     </Col>

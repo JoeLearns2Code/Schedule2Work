@@ -1,0 +1,27 @@
+
+.Profile {
+
+    background-color: orange;
+    min-height: 100%;
+    min-height: 100vh;
+    display: flex;
+    background-size: cover;
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+.componentwindow {
+
+    margin-top: -18em;
+    padding-top: 1em;
+    background-color: white;
+
+
+
+}
+
+.profileheadline {
+    padding-left: .4em;
+}
