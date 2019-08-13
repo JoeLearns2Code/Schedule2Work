@@ -1,6 +1,9 @@
 import React from 'react';
 import { Card, Form, FormGroup, FormControl, Button } from 'react-bootstrap';
+import './Login.css';
 
+//Import bootstrap elements
+import { Row, Col } from "../../components/Grid";
 
 
 const divStyle = {
@@ -10,11 +13,12 @@ const divStyle = {
 };
 
 const panelStyle = {
-    backgroundColor: 'rgba(255,255,255,0.5)',
+    backgroundColor: "white",
     border: 0,
     paddingLeft: 20,
     paddingRight: 20,
     width: 300,
+    paddingBottom: 20
 };
 
 const buttonStyle = {
@@ -27,7 +31,12 @@ function LoginForm({ handleFormSubmit, handleInputChange, email, password, messa
 
     return (
         <div style={divStyle}>
-            <h2>{message}</h2>
+            <Row>
+            <h2 className="messageheader">{message}</h2>
+            </Row>
+            <br />
+            <Row>
+                <Col size="md-12">
             <Card style={panelStyle}>
                 <Form horizontal="true" className="LoginForm" id="loginForm">
                     <FormGroup controlId="formEmail">
@@ -50,6 +59,8 @@ function LoginForm({ handleFormSubmit, handleInputChange, email, password, messa
                     </FormGroup>
                 </Form>
             </Card>
+            </Col>
+            </Row>
         </div>
     )
 }
