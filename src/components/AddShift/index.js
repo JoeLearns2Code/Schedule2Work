@@ -3,7 +3,7 @@ import React from "react";
 import { UncontrolledCollapse, Button } from 'reactstrap';
 
 //Add new Shift Function
-function AddShift({ startTime, endTime, roleName, proficiencyLevel, firstNameShift, lastNameShift, phoneShift, handleInputChange, handleShiftSubmit }) {
+function AddShift({ shiftDate, startTime, endTime, empID, handleInputChange, handleShiftSubmit }) {
   return (
     <form>
       <div className="form-group">
@@ -13,7 +13,16 @@ function AddShift({ startTime, endTime, roleName, proficiencyLevel, firstNameShi
           </Button>
         </label>
         <UncontrolledCollapse toggler="#toggler2">
-          
+          <input
+            className="form-control"
+            id="shiftdate"
+            type="text"
+            value={shiftDate}
+            placeholder="shift date"
+            name="shiftDate"
+            onChange={handleInputChange}
+            required
+          />
           <input
             className="form-control"
             id="starttime"
@@ -36,55 +45,14 @@ function AddShift({ startTime, endTime, roleName, proficiencyLevel, firstNameShi
           />
           <input
             className="form-control"
-            id="rolename"
+            id="employeeid"
             type="text"
-            value={roleName}
-            placeholder="role"
-            name="roleName"
+            value={empID}
+            placeholder="employee ID"
+            name="empID"
             onChange={handleInputChange}
             required
           />
-          <input
-            className="form-control"
-            id="proficiencylevel"
-            type="text"
-            value={proficiencyLevel}
-            placeholder="proficiency level"
-            name="proficiencyLevel"
-            onChange={handleInputChange}
-            required
-          />
-          <input
-            className="form-control"
-            id="firstnameshift"
-            type="text"
-            value={firstNameShift}
-            placeholder="first name"
-            name="firstNameShift"
-            onChange={handleInputChange}
-            required
-          />
-          <input
-            className="form-control"
-            id="lastnameshift"
-            type="text"
-            value={lastNameShift}
-            placeholder="last name"
-            name="lastNameShift"
-            onChange={handleInputChange}
-            required
-          />
-          <input
-            className="form-control"
-            id="phoneshift"
-            type="text"
-            value={phoneShift}
-            placeholder="phone number"
-            name="phoneShift"
-            onChange={handleInputChange}
-            required
-          />
-
           <div className="pull-right">
             <button
               onClick={handleShiftSubmit}

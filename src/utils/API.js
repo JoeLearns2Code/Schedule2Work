@@ -13,7 +13,7 @@ export default {
         return axios.get(BASEURL + "/api/employee/" + id);
     },
     addEmployee: function (data) {
-        return axios.post(BASEURL + "/api/newEmployee/", data);
+        return axios.post(BASEURL + "/api/newemployee/", data);
     },
     //TODO:
     updateEmployee: function (id) {
@@ -39,30 +39,6 @@ export default {
     },
 };
 
-
-
-
-//     updateEmployee: function (id, firstName, lastName, addressOne, addressTwo, city, state, zip, email, phone, phoneType) {
-//         return axios.put("/updateEmployee/" + id, {
-//             firstName: firstName,
-//             lastName: lastName,
-//             addressOne: addressOne,
-//             addressTwo: addressTwo,
-//             city: city,
-//             state: state,
-//             zip: zip,
-//             email: email,
-//             phone: phone,
-//             phoneType: phoneType
-//         });
-//     },
-
-//     updateEmpName: function (emp_id, firstName, lastName) {
-//         return axios.put("/updateEmpName/" + emp_id, {
-//             firstName: firstName,
-//             lastName: lastName
-//         });
-//     },
 
 
 

@@ -3,7 +3,7 @@ import React from "react";
 import { UncontrolledCollapse, Button } from 'reactstrap';
 
 //Add new employee function
-function AddEmployee({ firstName, lastName, address, startDate, dateofBirth, certDate, certType, email, phone, password, handleInputChange, handleEmployeeSubmit }) {
+function AddEmployee({ firstName, lastName, address, startDate, dateofBirth, certDate, certType, email, phone, password, roles, handleInputChange, handleEmployeeSubmit }) {
   return (
     <form>
       <div className="form-group">
@@ -110,6 +110,17 @@ function AddEmployee({ firstName, lastName, address, startDate, dateofBirth, cer
           value={password}
           placeholder="enter password"
           name="password"
+          onChange={handleInputChange}
+          required
+          
+        />
+        <input
+          className="form-control"
+          id="rolesenter"
+          type="text"
+          value={roles}
+          placeholder="enter roles"
+          name="roles"
           onChange={handleInputChange}
           required
           
