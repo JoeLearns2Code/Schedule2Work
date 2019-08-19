@@ -45,7 +45,7 @@ const Footer = () => {
                     <MDBCol md="4" lg="3" xl="3" className="mx-auto mt-3">
                         <h6 className="text-uppercase mb-4 font-weight-bold">Iman Gure</h6>
                         <p>
-                            <a href="https://github.com/ImanGurey"><i className="fab fa-github-square mr-3" /></a> Full Stack Web Developer
+                            <a href="https://github.com/"><i className="fab fa-github-square mr-3" /></a> Full Stack Web Developer
             </p>
                         <p>
                             <a href="https://www.linkedin.com/in//"><i className="fab fa-linkedin mr-3" /></a>Washington, USA
