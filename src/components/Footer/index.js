@@ -15,7 +15,7 @@ const Footer = () => {
                             <a href="https://github.com/2Endeavor"><i className="fab fa-github-square mr-3" /></a> Full Stack Web Developer
             </p>
                         <p>
-                            <a href="https://www.linkedin.com/in//"><i className="fab fa-linkedin mr-3" /></a> Washington, USA
+                            <a href="https://www.linkedin.com/in/6sigmablackbelt/"><i className="fab fa-linkedin mr-3" /></a> Washington, USA
             </p>
 
                     </MDBCol>
@@ -26,7 +26,7 @@ const Footer = () => {
                             <a href="https://github.com/ckaoki"><i className="fab fa-github-square mr-3" /></a>Full Stack Web Developer
             </p>
                         <p>
-                            <a href="https://www.linkedin.com/in//"><i className="fab fa-linkedin mr-3" /></a> Washington, USA
+                            <a href="https://www.linkedin.com/in//cullan-aoki-5583b292/"><i className="fab fa-linkedin mr-3" /></a> Washington, USA
             </p>
 
                     </MDBCol>
@@ -37,7 +37,7 @@ const Footer = () => {
                             <a href="https://github.com/JoeLearns2Code"><i className="fab fa-github-square mr-3" /></a> Full Stack Web Developer
             </p>
                         <p>
-                            <a href="https://www.linkedin.com/in//"><i className="fab fa-linkedin mr-3" /></a> Washington, USA
+                            <a href="https://www.linkedin.com/in/joe-hutchinson-996920173/"><i className="fab fa-linkedin mr-3" /></a> Washington, USA
             </p>
 
                     </MDBCol>
